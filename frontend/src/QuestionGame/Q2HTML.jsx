@@ -3,7 +3,7 @@ import background from "../picture/background.png";
 import LayoutGame from "../gamelevelhtml/LayoutGame";
 import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "./Questionbutton";
-
+import { LifeCompontent } from "./LifeCompontent";
 const Q2HTML = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -28,6 +28,7 @@ const Q2HTML = () => {
           <TitleHTML title={"LEVEL 2"} />
         </div>
 
+        <LifeCompontent></LifeCompontent>
         <div className="flex items-center justify-center flex-col relative space-y-6 font-mono">
           <div className="font-bold  text-2xl text-center px-5">
             <h1>
