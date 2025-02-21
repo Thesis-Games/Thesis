@@ -1,7 +1,8 @@
 import React from "react";
-import galaxy from "../picture/Leaderbg.jpg";
+import galaxy from "../picture/background.png";
 import LeaderTitleComponent from "../component/LeaderTitleComponent";
 import ButtonLeaderboard from "../component/ButtonLeaderboard";
+import { Link } from "react-router-dom";
 
 const Leaderboards = () => {
   return (

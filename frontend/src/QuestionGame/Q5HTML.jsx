@@ -5,18 +5,17 @@ import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "./Questionbutton";
 import { LifeCompontent } from "./LifeCompontent";
 
-const Q3HTML = () => {
+const Q5HTML = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     // Allow only a single character input
-    if (value.length > 50) {
-      e.target.value = value.slice(0, 50); // Restrict to the first character
+    if (value.length > 10) {
+      e.target.value = value.slice(0, 10); // Restrict to the first character
     }
   };
-
   return (
     <div
-      className="w-full h-screen relative flex items-center justify-center flex-col"
+      className="w-full h-screen relative flex items-center justify-center flex-col "
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -26,16 +25,13 @@ const Q3HTML = () => {
     >
       <LayoutGame>
         <div>
-          <TitleHTML title={"LEVEL 3"} />
+          <TitleHTML title={"LEVEL 5"} />
         </div>
 
         <LifeCompontent></LifeCompontent>
         <div className="flex items-center justify-center flex-col relative space-y-6 font-mono">
           <div className="font-bold  text-2xl text-center px-5">
-            <h1>
-              Fill in the missing syntax to create a paragraph about space
-              exploration. Use the &lt;a&gt; tag.
-            </h1>
+            <h1>Fill in the missing syntax to insert an image of a rocket.</h1>
           </div>
 
           <div className="">
@@ -44,15 +40,15 @@ const Q3HTML = () => {
                 &lt;html&gt; <br></br>
                 &lt;body&gt;
                 <br></br>
-                &lt;a href="
+                &lt;img href="
                 <input
                   type="text"
                   placeholder=""
-                  className="rounded-sm outline-none w-[225px] text-black"
+                  className="rounded-sm outline-none w-[90px] text-black"
                   onChange={handleInputChange} // Add the onChange handler here
-                  maxLength={20} // Ensure only one character can be entered
+                  maxLength={10} // Ensure only one character can be entered
                 />
-                "&gt; Explore the universe! &lt;/a&gt;
+                "{""} alt="A rocket launching into space"&gt;
                 <br></br>
                 &lt;/body&gt; <br></br>&lt;/html&gt;
               </p>
@@ -65,4 +61,4 @@ const Q3HTML = () => {
   );
 };
 
-export default Q3HTML;
+export default Q5HTML;

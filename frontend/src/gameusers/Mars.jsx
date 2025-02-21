@@ -1,7 +1,7 @@
 import React from "react";
 import background from "../picture/marsbg.gif";
 import { Link } from "react-router-dom";
-const Home = () => {
+const Mars = () => {
   // Zodiac signs in order
   const zodiacSigns = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Mars;
