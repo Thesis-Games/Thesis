@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/spacebg.gif";
 import { Link } from "react-router-dom";
 
 const Homegame = () => {
@@ -22,7 +22,7 @@ const Homegame = () => {
 
         {/* START BUTTON */}
         <div className="flex justify-center items-center mt-10">
-          <Link to="/home/start">
+          <Link to="/home/languagepick">
             <div
               className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
               style={{
