@@ -49,9 +49,8 @@ const Html5 = () => {
             </p>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

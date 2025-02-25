@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/earthbg.gif";
 import Gamebutton from "./Gamebutton";
 import LayoutGame from "./LayoutGame";
 import TitleHTML from "./TitleHTML";
@@ -31,8 +31,8 @@ const Html1 = () => {
             behavior of web pages.
           </div>
         </div>
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

@@ -61,9 +61,8 @@ const Html23 = () => {
             </pre>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

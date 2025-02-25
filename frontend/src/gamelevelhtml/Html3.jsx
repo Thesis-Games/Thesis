@@ -44,8 +44,8 @@ const Html3 = () => {
             </p>
           </div>
         </div>
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

@@ -46,8 +46,8 @@ const Html2 = () => {
             </p>
           </div>
         </div>
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

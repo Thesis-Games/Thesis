@@ -50,9 +50,8 @@ const Html13 = () => {
             </div>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

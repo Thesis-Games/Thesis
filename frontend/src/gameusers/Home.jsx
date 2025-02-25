@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import background from "../picture/marsbg.gif";
+import background from "../picture/earthbg.gif";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -37,11 +37,11 @@ const Home = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="gap-5 flex flex-wrap justify-center font-mono">
+      <div className="gap-5 flex flex-wrap justify-center font-mono ">
         {currentItems.map((sign, index) => (
           <Link key={index} to="/introduction">
             <div
-              className="flex items-center justify-center text-black font-bold bg-yellow-400 rounded-full w-20 h-20 hover:bg-yellow-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+              className="flex items-center justify-center text-black font-bold bg-yellow-400 rounded-full w-20 h-20  hover:scale-110 transition-transform duration-300 hover:bg-yellow-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
               style={{
                 border: "3px solid black",
                 boxShadow: `0 0 10px rgba(255, 255, 255, 0.8),

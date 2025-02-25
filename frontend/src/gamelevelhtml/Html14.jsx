@@ -52,9 +52,8 @@ const Html14 = () => {
             </div>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

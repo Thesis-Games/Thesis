@@ -46,9 +46,8 @@ const Html12 = () => {
             </div>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+      <Gamebutton></Gamebutton>
     </div>
   );
 };

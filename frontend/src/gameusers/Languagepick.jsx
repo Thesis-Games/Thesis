@@ -62,49 +62,53 @@ const Languagepick = () => {
             </div>
           </div>
         </Link>
-        <div
-          className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
-          style={{
-            boxShadow: `
+
+        <Link to="/languagepick/csslevel">
+          <div
+            className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+            style={{
+              boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
                   0 0 20px rgba(255, 255, 255, 0.6), 
                   0 0 30px rgba(255, 255, 255, 0.4)
                 `,
-          }}
-        >
-          <img
-            src={mars}
-            alt="Mars"
-            className="w-full h-full object-cover rounded-lg"
-          />
+            }}
+          >
+            <img
+              src={mars}
+              alt="Mars"
+              className="w-full h-full object-cover rounded-lg"
+            />
 
-          <div className=" absolute items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100"
-              height="100"
-              viewBox="0 0 256 361"
-            >
-              <path
-                fill="#264de4"
-                d="M127.844 360.088L23.662 331.166L.445 70.766h255.11l-23.241 260.36z"
-              />
-              <path
-                fill="#2965f1"
-                d="m212.417 314.547l19.86-222.49H128V337.95z"
-              />
-              <path
-                fill="#ebebeb"
-                d="m53.669 188.636l2.862 31.937H128v-31.937zm-5.752-64.641l2.903 31.937H128v-31.937zM128 271.58l-.14.037l-35.568-9.604l-2.274-25.471h-32.06l4.474 50.146l65.421 18.16l.147-.04z"
-              />
-              <path d="M60.484 0h38.68v16.176H76.66v16.176h22.506v16.175H60.484zm46.417 0h38.681v14.066h-22.505v2.813h22.505v32.352h-38.68V34.46h22.505v-2.813H106.9zm46.418 0H192v14.066h-22.505v2.813H192v32.352h-38.681V34.46h22.505v-2.813H153.32z" />
-              <path
-                fill="#fff"
-                d="m202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08z"
-              />
-            </svg>
+            <div className=" absolute items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 256 361"
+              >
+                <path
+                  fill="#264de4"
+                  d="M127.844 360.088L23.662 331.166L.445 70.766h255.11l-23.241 260.36z"
+                />
+                <path
+                  fill="#2965f1"
+                  d="m212.417 314.547l19.86-222.49H128V337.95z"
+                />
+                <path
+                  fill="#ebebeb"
+                  d="m53.669 188.636l2.862 31.937H128v-31.937zm-5.752-64.641l2.903 31.937H128v-31.937zM128 271.58l-.14.037l-35.568-9.604l-2.274-25.471h-32.06l4.474 50.146l65.421 18.16l.147-.04z"
+                />
+                <path d="M60.484 0h38.68v16.176H76.66v16.176h22.506v16.175H60.484zm46.417 0h38.681v14.066h-22.505v2.813h22.505v32.352h-38.68V34.46h22.505v-2.813H106.9zm46.418 0H192v14.066h-22.505v2.813H192v32.352h-38.681V34.46h22.505v-2.813H153.32z" />
+                <path
+                  fill="#fff"
+                  d="m202.127 188.636l5.765-64.641H127.89v31.937h45.002l-2.906 32.704H127.89v31.937h39.327l-3.708 41.42l-35.62 9.614v33.226l65.473-18.145l.48-5.396l7.506-84.08z"
+                />
+              </svg>
+            </div>
           </div>
-        </div>
+        </Link>
+
         <div
           className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
           style={{

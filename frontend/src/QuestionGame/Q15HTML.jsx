@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/earthbg.gif";
 import LayoutGame from "../gamelevelhtml/LayoutGame";
 import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "./Questionbutton";
@@ -59,9 +59,9 @@ const Q15HTML = () => {
             </div>
           </div>
         </div>
-
-        <Questionbutton></Questionbutton>
       </LayoutGame>
+
+      <Questionbutton></Questionbutton>
     </div>
   );
 };

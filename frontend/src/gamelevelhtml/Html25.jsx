@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/earthbg.gif";
 import Gamebutton from "./Gamebutton";
 import LayoutGame from "./LayoutGame";
 import TitleHTML from "./TitleHTML";
@@ -7,7 +7,7 @@ import TitleHTML from "./TitleHTML";
 const Html25 = () => {
   return (
     <div
-      className="w-full h-screen relative flex items-center justify-center flex-col"
+      className="w-full h-screen flex flex-col items-center justify-center relative"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -16,52 +16,42 @@ const Html25 = () => {
       }}
     >
       <LayoutGame>
-        <div>
-          <TitleHTML title={"LEVEL 25"} />
-        </div>
+        <TitleHTML title="LEVEL 25" />
 
-        <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-4xl mt-5">
-            <h1>Level 25: Creating an Interactive Form</h1>
-          </div>
-          <div className="p-5 md:py-1 px-5 text-lg text-center md:text-1xl leading-relaxed text-[#414040]">
-            <p>
-              Forms can have interactive elements like checkboxes, radio
-              buttons, and more. Use JavaScript for dynamic form actions.
-            </p>
-          </div>
+        <div className="flex flex-col items-center  space-y-4 font-mono">
+          <h1 className="font-bold text-4xl mt-5">
+            Level 25: Creating an Interactive Form
+          </h1>
 
-          <div className="py-4 px-5  leading-relaxed text-[#ffffff] bg-[#222] rounded-md ">
-            <pre className="whitespace-pre-wrap font-mono text-sm">
+          <p className="p-5  text-lg leading-relaxed text-center text-[#414040]">
+            Forms can have interactive elements like checkboxes, radio buttons,
+            and more. Use JavaScript for dynamic form actions.
+          </p>
+
+          {/* Ayos na margin at padding sa code block */}
+          <div className="px-6 py-4 mt-10 text-sm leading-relaxed text-white bg-[#222] rounded-md shadow-lg">
+            <pre className="whitespace-pre-wrap font-mono">
               <code>
-                {"<html>"}
-                <br />
-                {"  <head>"}
-                <br />
+                {"<html>\n"}
+                {"  <head>\n"}
                 {
-                  "    <meta name='description' content='A website for space exploration' />"
+                  "    <meta name='description' content='A website for space exploration' />\n"
                 }
-                <br />
                 {
-                  "    <meta name='keywords' content='space, mars, rocket, mission' />"
+                  "    <meta name='keywords' content='space, mars, rocket, mission' />\n"
                 }
-                <br />
-                {"  </head>"}
-                <br />
-                {"  <body>"}
-                <br />
-                {"    <h1>Space Exploration Website</h1>"}
-                <br />
-                {"  </body>"}
-                <br />
-                {"</html>"}
+                {"  </head>\n"}
+                {"  <body>\n"}
+                {"    <h1>Space Exploration Website</h1>\n"}
+                {"  </body>\n"}
+                {"</html>\n"}
               </code>
             </pre>
           </div>
         </div>
-
-        <Gamebutton></Gamebutton>
       </LayoutGame>
+
+      <Gamebutton />
     </div>
   );
 };

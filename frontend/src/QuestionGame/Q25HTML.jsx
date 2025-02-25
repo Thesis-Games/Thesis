@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/earthbg.gif";
 import LayoutGame from "../gamelevelhtml/LayoutGame";
 import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "./Questionbutton";
@@ -30,7 +30,7 @@ const Q25HTML = () => {
             </h1>
           </div>
 
-          <div className="text-[#ffffff] bg-[#222] px-7 py-4 rounded-md text-sm font-mono">
+          <div className="  px-6 py-4 mt-20 text-sm leading-relaxed text-white bg-[#222] rounded-md    font-mono">
             <div>
               <p>&lt;html&gt;</p>
               <p className="ml-4">&lt;head&gt;</p>
@@ -69,8 +69,8 @@ const Q25HTML = () => {
             </div>
           </div>
         </div>
-        <Questionbutton></Questionbutton>
       </LayoutGame>
+      <Questionbutton></Questionbutton>
     </div>
   );
 };
