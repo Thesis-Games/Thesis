@@ -44,7 +44,7 @@ const Question22 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;label for="
             <input
               type="text"
-              className="rounded-sm outline-none w-[55px] text-black mx-1 mt-2"
+              className="rounded-sm outline-none w-[55  px] text-black mx-1 mt-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer3}

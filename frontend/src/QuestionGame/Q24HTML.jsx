@@ -38,7 +38,7 @@ const Q24HTML = () => {
                 &lt;meta name="
                 <input
                   type="text"
-                  className="rounded-sm outline-none w-[120px] text-black mx-1 mt-2"
+                  className="rounded-sm outline-none w-[10px] text-black mx-1 mt-2"
                   placeholder=""
                 />
                 " content="Astronaut Training Website" &gt;
