@@ -47,14 +47,22 @@ import Csslvl2 from "./cssdefenition/Csslvl2";
 import Csslvl3 from "./cssdefenition/Csslvl3";
 import Csslvl4 from "./cssdefenition/Csslvl4";
 import Csslvl5 from "./cssdefenition/Csslvl5";
-
+import Csslvl6 from "./cssdefenition/Csslvl6";
+import Csslvl7 from "./cssdefenition/Csslvl7";
+import Csslvl8 from "./cssdefenition/Csslvl8";
+import Csslvl9 from "./cssdefenition/Csslvl9";
+import Csslvl10 from "./cssdefenition/Csslvl10";
 // Css Games / game
 import Cssq1 from "./cssquiz/Cssq1";
 import Cssq2 from "./cssquiz/Cssq2";
 import Cssq3 from "./cssquiz/Cssq3";
 import Cssq4 from "./cssquiz/Cssq4";
 import Cssq5 from "./cssquiz/Cssq5";
-
+import Cssq6 from "./cssquiz/Cssq6";
+import Cssq7 from "./cssquiz/Cssq7";
+import Cssq8 from "./cssquiz/Cssq8";
+import Cssq9 from "./cssquiz/Cssq9";
+import Cssq10 from "./cssquiz/Cssq10";
 // Css Defenition  / introduction
 import Jslvl1 from "./Jsdefenition/Jslvl1";
 import Jslvl2 from "./Jsdefenition/Jslvl2";
@@ -84,8 +92,8 @@ const App = () => {
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/introduction" element={<Jslvl6 />} />
-          <Route path="/game" element={<Cssq4 />} />
+          <Route path="/introduction" element={<Csslvl10/>} />
+          <Route path="/game" element={<Cssq10/>} />
         </Routes>
       </BrowserRouter>
     </>
