@@ -41,18 +41,31 @@ import Q23HTML from "./QuestionGame/Q23HTML";
 import Q24HTML from "./QuestionGame/Q24HTML";
 import Q25HTML from "./QuestionGame/Q25HTML";
 
-// Css Defenition
+// Css Defenition  / introduction
 import Csslvl1 from "./cssdefenition/Csslvl1";
 import Csslvl2 from "./cssdefenition/Csslvl2";
 import Csslvl3 from "./cssdefenition/Csslvl3";
 import Csslvl4 from "./cssdefenition/Csslvl4";
 import Csslvl5 from "./cssdefenition/Csslvl5";
 
-// Css Defenition
+// Css Games / game
 import Cssq1 from "./cssquiz/Cssq1";
 import Cssq2 from "./cssquiz/Cssq2";
 import Cssq3 from "./cssquiz/Cssq3";
 import Cssq4 from "./cssquiz/Cssq4";
+import Cssq5 from "./cssquiz/Cssq5";
+
+// Css Defenition  / introduction
+import Jslvl1 from "./Jsdefenition/Jslvl1";
+import Jslvl2 from "./Jsdefenition/Jslvl2";
+import Jslvl3 from "./Jsdefenition/Jslvl3";
+import Jslvl4 from "./Jsdefenition/Jslvl4";
+import Jslvl5 from "./Jsdefenition/Jslvl5";
+import Jslvl6 from "./Jsdefenition/Jslvl6";
+import Jslvl7 from "./Jsdefenition/Jslvl7";
+import Jslvl8 from "./Jsdefenition/Jslvl8";
+import Jslvl9 from "./Jsdefenition/Jslvl9";
+import Jslvl10 from "./Jsdefenition/Jslvl10";
 
 // Signup/Signin User
 import Signup from "./component/Signup";
@@ -71,7 +84,7 @@ const App = () => {
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/introduction" element={<Csslvl1 />} />
+          <Route path="/introduction" element={<Jslvl6 />} />
           <Route path="/game" element={<Cssq4 />} />
         </Routes>
       </BrowserRouter>

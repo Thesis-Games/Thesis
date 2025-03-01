@@ -41,8 +41,8 @@ const Cssq2 = () => {
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[70px] text-black px-1"
-                    maxLength={10}
+                    className="rounded-sm outline-none w-[40px] text-black px-1"
+                    maxLength={4}
                   />
                   {";"}
                   <br />
@@ -50,8 +50,8 @@ const Cssq2 = () => {
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[100px] text-black px-1 mt-2 "
-                    maxLength={20}
+                    className="rounded-sm outline-none w-[65px] text-black px-1 mt-2 "
+                    maxLength={7}
                   />
                   {";"}
                   <br />
