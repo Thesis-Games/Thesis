@@ -13,11 +13,21 @@ import Html2 from "./gamelevelhtml/Html2";
 import Html3 from "./gamelevelhtml/Html3";
 import Html4 from "./gamelevelhtml/Html4";
 import Html5 from "./gamelevelhtml/Html5";
+import Html6 from "./gamelevelhtml/Html6"
+import Html7 from "./gamelevelhtml/Html7";
+import Html8 from "./gamelevelhtml/Html8";
+import Html9 from "./gamelevelhtml/Html9";
+import Html10 from "./gamelevelhtml/Html10";
 import Html11 from "./gamelevelhtml/Html11";
 import Html12 from "./gamelevelhtml/Html12";
 import Html13 from "./gamelevelhtml/Html13";
 import Html14 from "./gamelevelhtml/Html14";
 import Html15 from "./gamelevelhtml/Html15";
+import Html16 from "./gamelevelhtml/Html16";
+import Html17 from "./gamelevelhtml/Html17";
+import Html18 from "./gamelevelhtml/Html18";
+import Html19 from "./gamelevelhtml/Html19";
+import Html20 from "./gamelevelhtml/Html20";
 import Html21 from "./gamelevelhtml/Html21";
 import Html22 from "./gamelevelhtml/Html22";
 import Html23 from "./gamelevelhtml/Html23";
@@ -30,11 +40,21 @@ import Q2HTML from "./QuestionGame/Q2HTML";
 import Q3HTML from "./QuestionGame/Q3HTML";
 import Q4HTML from "./QuestionGame/Q4HTML";
 import Q5HTML from "./QuestionGame/Q5HTML";
+import Q6HTML from "./QuestionGame/Q6HTML";
+import Q7HTML from "./QuestionGame/Q7HTML";
+import Q8HTML from "./QuestionGame/Q8HTML";
+import Q9HTML from "./QuestionGame/Q9HTML";
+import Q10HTML from "./QuestionGame/Q10HTML";
 import Q11HTML from "./QuestionGame/Q11HTML";
 import Q12HTML from "./QuestionGame/Q12HTML";
 import Q13HTML from "./QuestionGame/Q13HTML";
 import Q14HTML from "./QuestionGame/Q14HTML";
 import Q15HTML from "./QuestionGame/Q15HTML";
+import Q16HTML from "./QuestionGame/Q16HTML";
+import Q17HTML from "./QuestionGame/Q17HTML";
+import Q18HTML from "./QuestionGame/Q18HTML";
+import Q19HTML from "./QuestionGame/Q19HTML";
+import Q20HTML from "./QuestionGame/Q20HTML";
 import Q21HTML from "./QuestionGame/Q21HTML";
 import Q22HTML from "./QuestionGame/Q22HTML";
 import Q23HTML from "./QuestionGame/Q23HTML";
@@ -92,8 +112,8 @@ const App = () => {
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/introduction" element={<Csslvl10/>} />
-          <Route path="/game" element={<Cssq10/>} />
+          <Route path="/introduction" element={<Html20/>} />
+          <Route path="/game" element={<Q20HTML/>} />
         </Routes>
       </BrowserRouter>
     </>
