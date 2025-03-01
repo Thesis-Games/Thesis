@@ -31,7 +31,7 @@ const Cssq1 = () => {
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <div className=" flex   px-7 py-4 text-[13px] leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+                <div className=" flex   px- py-4 text-[13px] leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
                   <pre className="whitespace-pre-wrap font-mono text-sm">
                     <code>
                       {"<html>"}

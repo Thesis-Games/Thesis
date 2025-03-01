@@ -26,18 +26,19 @@ const Jslvl2 = () => {
 
             <div className="w-full text-center mt-5 px-10">
               <p className="text-lg text-[#414040]">
-                JavaScript has several data types including strings, numbers,
-                and booleans.
+                In JavaScript, data types include numbers (like 1, 2, 3) and
+                booleans (true or false). These help store simple data for your
+                mission!
               </p>
             </div>
 
             {/* Code Block - Now Centered */}
-            <div className="w-full flex justify-center items-center mt-20">
+            <div className="w-full flex justify-center items-center mt-16">
               <div className="bg-[#222] rounded-md text-white text-lg">
                 <pre className="whitespace-pre-wrap leading-relaxed px-9 py-5">
                   <code>
                     <p>Example:</p>
-                    {"let distance = 300000;"}
+                    {"let distance = 28;"}
                     <br />
                     {"let isPlanetHabitable = true;"}
                   </code>
