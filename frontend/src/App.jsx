@@ -114,6 +114,21 @@ import Jslvl7 from "./Jsdefenition/Jslvl7";
 import Jslvl8 from "./Jsdefenition/Jslvl8";
 import Jslvl9 from "./Jsdefenition/Jslvl9";
 import Jslvl10 from "./Jsdefenition/Jslvl10";
+import Jslvl11 from "./Jsdefenition/Jslvl11";
+import Jslvl12 from "./Jsdefenition/Jslvl12";
+import Jslvl13 from "./Jsdefenition/Jslvl13";
+import Jslvl14 from "./Jsdefenition/Jslvl14";
+import Jslvl15 from "./Jsdefenition/Jslvl15";
+import Jslvl16 from "./Jsdefenition/Jslvl16";
+import Jslvl17 from "./Jsdefenition/Jslvl17";
+import Jslvl18 from "./Jsdefenition/Jslvl18";
+import Jslvl19 from "./Jsdefenition/Jslvl19";
+import Jslvl20 from "./Jsdefenition/Jslvl20";
+import Jslvl21 from "./Jsdefenition/Jslvl21";
+import Jslvl22 from "./Jsdefenition/Jslvl22";
+import Jslvl23 from "./Jsdefenition/Jslvl23";
+import Jslvl24 from "./Jsdefenition/Jslvl24";
+import Jslvl25 from "./Jsdefenition/Jslvl25";
 
 // Js Games / game
 import Jsq1 from "./Jsquiz/Jsq1";
@@ -126,6 +141,21 @@ import Jsq7 from "./Jsquiz/Jsq7";
 import Jsq8 from "./Jsquiz/Jsq8";
 import Jsq9 from "./Jsquiz/Jsq9";
 import Jsq10 from "./Jsquiz/Jsq10";
+import Jsq11 from "./Jsquiz/Jsq11";
+import Jsq12 from "./Jsquiz/Jsq12";
+import Jsq13 from "./Jsquiz/Jsq13";
+import Jsq14 from "./Jsquiz/Jsq14";
+import Jsq15 from "./Jsquiz/Jsq15";
+import Jsq16 from "./Jsquiz/Jsq16";
+import Jsq17 from "./Jsquiz/Jsq17";
+import Jsq18 from "./Jsquiz/Jsq18";
+import Jsq19 from "./Jsquiz/Jsq19";
+import Jsq20 from "./Jsquiz/Jsq20";
+import Jsq21 from "./Jsquiz/Jsq21";
+import Jsq22 from "./Jsquiz/Jsq22";
+import Jsq23 from "./Jsquiz/Jsq23";
+import Jsq24 from "./Jsquiz/Jsq24";
+import Jsq25 from "./Jsquiz/Jsq25";
 
 // Signup/Signin User
 import Signup from "./component/Signup";

@@ -3,8 +3,24 @@ import background from "../picture/background.png";
 import { FormLayoutComponent } from "./FormLayoutComponent";
 import TitleComponent from "./TitleComponent";
 import ButtonComponent from "./ButtonComponent";
-
+import { signupFormSchema } from "../validation/signup-schema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import SignUpHook from "../hook/signup-hook";
 const Signup = () => {
+  const { handleSignup, loading } = SignUpHook();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(signupFormSchema),
+  });
+
+  const onSubmit = (data) => {
+    handleSignup(data);
+  };
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -19,29 +35,39 @@ const Signup = () => {
         <div>
           <TitleComponent title={"Sign Up"} />
         </div>
-        <form className="w-full flex flex-col gap-5 items-center font-mono ">
+        <form
+          className="w-full flex flex-col gap-5 items-center font-mono "
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <input
-            type="text"
+            {...register("username")}
             placeholder="Username"
-            className="p-3 rounded-full  bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
+            className="p-3 rounded-full bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
           />
+          {errors.username && (
+            <p className="text-red-500">{errors.username.message}</p>
+          )}
 
           <input
-            type="email"
+            {...register("email")}
             placeholder="Email"
             className="p-3 rounded-full bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
           />
+          {errors.email && (
+            <p className="text-red-500">{errors.email.message}</p>
+          )}
 
           <input
-            type="password"
+            {...register("password")}
             placeholder="Password"
             className="p-3 rounded-full bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
           />
-        </form>
+          {errors.password && (
+            <p className="text-red-500">{errors.password.message}</p>
+          )}
 
-        <div>
-          <ButtonComponent />
-        </div>
+          <ButtonComponent handleSignIn={handleSubmit(onSubmit)} />
+        </form>
       </FormLayoutComponent>
     </div>
   );
