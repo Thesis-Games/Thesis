@@ -65,6 +65,7 @@ const Signup = () => {
           <input
             {...register("password")}
             placeholder="Password"
+            type="password"
             className="p-3 rounded-full bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
           />
           {errors.password && (
