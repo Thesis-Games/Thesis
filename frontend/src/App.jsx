@@ -131,6 +131,18 @@ import Jslvl18 from "./Jsdefenition/Jslvl18";
 import Jslvl19 from "./Jsdefenition/Jslvl19";
 import Jslvl20 from "./Jsdefenition/Jslvl20";
 
+// Js Games / game
+import Jsq1 from "./Jsquiz/Jsq1";
+import Jsq2 from "./Jsquiz/Jsq2";
+import Jsq3 from "./Jsquiz/Jsq3";
+import Jsq4 from "./Jsquiz/Jsq4";
+import Jsq5 from "./Jsquiz/Jsq5";
+import Jsq6 from "./Jsquiz/Jsq6";
+import Jsq7 from "./Jsquiz/Jsq7";
+import Jsq8 from "./Jsquiz/Jsq8";
+import Jsq9 from "./Jsquiz/Jsq9";
+import Jsq10 from "./Jsquiz/Jsq10";
+
 // Signup/Signin User
 import Signup from "./component/Signup";
 import Recover from "./component/Recover";
@@ -148,10 +160,15 @@ const App = () => {
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
+<<<<<<< HEAD
           <Route path="/introduction" element={<Jslvl20/>} />
           <Route path="/game" element={<Cssq20/>} />
           <Route path="/introduction" element={<Csslvl25/>} />
           <Route path="/game" element={<Cssq25/>} />
+=======
+          <Route path="/introduction" element={<Jslvl2 />} />
+          <Route path="/game" element={<Jsq10 />} />
+>>>>>>> f6bbb80 (Changes)
         </Routes>
       </BrowserRouter>
     </>
