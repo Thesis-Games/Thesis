@@ -4,7 +4,7 @@ import Csslayout from "../csscomponent/Csslayout";
 import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 
-const Cssq16 = () => {
+const Cssq11 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -16,47 +16,54 @@ const Cssq16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 11"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-10  mt-5 ">
             <p>
-              Fill in the missing syntax to create a grid with two equal
-              columns.
+              Fill in the missing syntax to change the background color to red
+              when hovering over the Mars Mission button.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-1 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+            <div className="px-6 py-4 text-[13px]  leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
               <pre className="whitespace-pre-wrap font-mono text-sm">
                 <code>
                   {"<html>"}
                   <br />
-                  {"   <head>"}
+                  {"  <head>"}
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .container {"}
+                  {"      .button {"}
                   <br />
-                  {"        display: grid;"}
+                  {"        width: 100px;"}
                   <br />
-                  {"        grid-template-columns: "}
+                  {"        height: 50px;"}
+                  <br />
+                  {"        background-color: blue;"}
+                  <br />
+                  {"        transition: "}
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[110px] text-black px-1"
-                    maxLength={11}
+                    className="rounded-sm outline-none w-[130px] text-black px-1"
+                    maxLength={16}
                   />
-                  {";"}
-                  <br />
-                  {"        gap: 10px;"}
+                  {" 0.5s;"}
                   <br />
                   {"      }"}
                   <br />
-                  {"      .item {"}
+                  {"      .button:hover {"}
                   <br />
-                  {"        background-color: lightyellow;"}
-                  <br />
-                  {"        height: 100px;"}
+                  {"        background-color: "}
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="rounded-sm outline-none w-[30px] text-black px-1"
+                    maxLength={3}
+                  />
+                  {";"}
                   <br />
                   {"      }"}
                   <br />
@@ -66,13 +73,7 @@ const Cssq16 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {'    <div class="container">'}
-                  <br />
-                  {'      <div class="item">A</div>'}
-                  <br />
-                  {'      <div class="item">B</div>'}
-                  <br />
-                  {"    </div>"}
+                  {'    <button class="button">Mars Mission</button>'}
                   <br />
                   {"  </body>"}
                   <br />
@@ -88,4 +89,4 @@ const Cssq16 = () => {
   );
 };
 
-export default Cssq16;
+export default Cssq11;

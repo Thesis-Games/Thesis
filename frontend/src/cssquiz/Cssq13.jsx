@@ -4,7 +4,7 @@ import Csslayout from "../csscomponent/Csslayout";
 import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 
-const Cssq16 = () => {
+const Cssq13 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -16,47 +16,60 @@ const Cssq16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 13"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-10  mt-5 ">
             <p>
-              Fill in the missing syntax to create a grid with two equal
-              columns.
+              Complete the missing code to create a shadow for the Mars Rover
+              with a 15px offset, 30px blur, and 0.3 opacity.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-1 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+            <div className="px-6 py-4 text-[13px] mt-5 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
               <pre className="whitespace-pre-wrap font-mono text-sm">
                 <code>
                   {"<html>"}
                   <br />
-                  {"   <head>"}
+                  {"  <head>"}
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .container {"}
+                  {"      .box {"}
                   <br />
-                  {"        display: grid;"}
+                  {"        width: 200px;"}
                   <br />
-                  {"        grid-template-columns: "}
+                  {"        height: 200px;"}
+                  <br />
+                  {"        background-color: yellow;"}
+                  <br />
+                  {"        box-shadow: "}
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[110px] text-black px-1"
-                    maxLength={11}
+                    className="rounded-sm outline-none w-[30px] text-black px-1"
+                    maxLength={5}
+                  />{" "}
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="rounded-sm outline-none w-[30px] text-black px-1"
+                    maxLength={5}
+                  />{" "}
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="rounded-sm outline-none w-[30px] text-black px-1"
+                    maxLength={5}
                   />
-                  {";"}
-                  <br />
-                  {"        gap: 10px;"}
-                  <br />
-                  {"      }"}
-                  <br />
-                  {"      .item {"}
-                  <br />
-                  {"        background-color: lightyellow;"}
-                  <br />
-                  {"        height: 100px;"}
+                  {" rgba(0, 0, 0, "}
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="rounded-sm outline-none w-[30px] text-black px-1"
+                    maxLength={3}
+                  />
+                  {")"}
                   <br />
                   {"      }"}
                   <br />
@@ -66,13 +79,7 @@ const Cssq16 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {'    <div class="container">'}
-                  <br />
-                  {'      <div class="item">A</div>'}
-                  <br />
-                  {'      <div class="item">B</div>'}
-                  <br />
-                  {"    </div>"}
+                  {'    <div class="box">🚜 Mars Rover</div>'}
                   <br />
                   {"  </body>"}
                   <br />
@@ -88,4 +95,4 @@ const Cssq16 = () => {
   );
 };
 
-export default Cssq16;
+export default Cssq13;

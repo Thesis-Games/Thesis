@@ -5,7 +5,7 @@ import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 import { Link } from "react-router-dom";
 
-const Csslvl16 = () => {
+const Csslvl15 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -17,45 +17,48 @@ const Csslvl16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 15"} />
 
         <div className="flex flex-col items-center justify-center relative font-mono">
-          <div className="font-bold text-4xl mt-7">
-            <h1>Level 16: Grid Layout Basics</h1>
+          <div className="font-bold text-4xl mt-5">
+            <h1>Level 15: Align Items in Flexbox</h1>
           </div>
           <div className="py-1 px-5 text-lg text-center mt-2 leading-relaxed text-[#414040]">
             <p>
-              CSS Grid Layout is a two-dimensional layout system for the web,
-              allowing you to design web pages using rows and columns.
+              The align-items property in flexbox allows you to align items
+              vertically within a container.
             </p>
           </div>
 
           {/* Adjusted margin using Tailwind only */}
-          <div className="px-6 py-1 text-[9px] mt-1 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+
+          <div className="px-6 py-1  text-[9px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
             <p>Example:</p>
             <pre className="whitespace-pre-wrap font-mono ">
               <code>
                 {"<html>"}
                 <br />
-                {"   <head>"}
+                {"  <head>"}
                 <br />
                 {"    <style>"}
                 <br />
                 {"      .container {"}
                 <br />
-                {"        display: grid;"}
+                {"        display: flex;"}
                 <br />
-                {"        grid-template-columns: repeat(3, 1fr);"}
+                {"        align-items: center;"}
                 <br />
-                {"        gap: 10px;"}
+                {"        height: 300px;"}
                 <br />
                 {"      }"}
                 <br />
                 {"      .item {"}
                 <br />
-                {"        background-color: lightpink;"}
+                {"        width: 100px;"}
                 <br />
                 {"        height: 100px;"}
+                <br />
+                {"        background-color: darkorange;"}
                 <br />
                 {"      }"}
                 <br />
@@ -88,4 +91,4 @@ const Csslvl16 = () => {
   );
 };
 
-export default Csslvl16;
+export default Csslvl15;

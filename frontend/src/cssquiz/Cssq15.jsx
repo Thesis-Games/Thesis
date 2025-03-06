@@ -4,7 +4,7 @@ import Csslayout from "../csscomponent/Csslayout";
 import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 
-const Cssq16 = () => {
+const Cssq15 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -16,47 +16,49 @@ const Cssq16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 15"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-10  mt-5 ">
             <p>
-              Fill in the missing syntax to create a grid with two equal
-              columns.
+              Align the Mars base modules to the top of the container for proper
+              setup!
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-1 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
-              <pre className="whitespace-pre-wrap font-mono text-sm">
+            <div className="px-6 py-4 text-[10px] mt-5 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+              <pre className="whitespace-pre-wrap font-mono ">
                 <code>
                   {"<html>"}
                   <br />
-                  {"   <head>"}
+                  {"  <head>"}
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .container {"}
+                  {"      .mars-base {"}
                   <br />
-                  {"        display: grid;"}
+                  {"        display: flex;"}
                   <br />
-                  {"        grid-template-columns: "}
+                  {"        align-items: "}
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[110px] text-black px-1"
-                    maxLength={11}
+                    className="rounded-sm outline-none w-[50px] text-black px-1"
+                    maxLength={10}
                   />
                   {";"}
                   <br />
-                  {"        gap: 10px;"}
+                  {"        height: 300px;"}
                   <br />
                   {"      }"}
                   <br />
-                  {"      .item {"}
+                  {"      .module {"}
                   <br />
-                  {"        background-color: lightyellow;"}
+                  {"        width: 100px;"}
                   <br />
                   {"        height: 100px;"}
+                  <br />
+                  {"        background-color: darkred;"}
                   <br />
                   {"      }"}
                   <br />
@@ -66,11 +68,13 @@ const Cssq16 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {'    <div class="container">'}
+                  {'    <div class="mars-base">'}
                   <br />
-                  {'      <div class="item">A</div>'}
+                  {'      <div class="module">🌱 Greenhouse</div>'}
                   <br />
-                  {'      <div class="item">B</div>'}
+                  {'      <div class="module">⚡ Power Station</div>'}
+                  <br />
+                  {'      <div class="module">📡 Communication Hub</div>'}
                   <br />
                   {"    </div>"}
                   <br />
@@ -88,4 +92,4 @@ const Cssq16 = () => {
   );
 };
 
-export default Cssq16;
+export default Cssq15;

@@ -4,7 +4,7 @@ import Csslayout from "../csscomponent/Csslayout";
 import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 
-const Cssq16 = () => {
+const Cssq14 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -16,47 +16,54 @@ const Cssq16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 14"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-10  mt-5 ">
             <p>
-              Fill in the missing syntax to create a grid with two equal
-              columns.
+              The Martian colony buildings should be stacked in a column instead
+              of a row. Complete the missing code!
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-1 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
-              <pre className="whitespace-pre-wrap font-mono text-sm">
+            <div className="px-6 py-4 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+              <pre className="whitespace-pre-wrap font-mono ">
                 <code>
                   {"<html>"}
                   <br />
-                  {"   <head>"}
+                  {"  <head>"}
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .container {"}
+                  {"      .colony {"}
                   <br />
-                  {"        display: grid;"}
-                  <br />
-                  {"        grid-template-columns: "}
+                  {"        display: "}
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[110px] text-black px-1"
-                    maxLength={11}
+                    className="rounded-sm outline-none w-[50px] text-black px-1 mb-2"
+                    maxLength={10}
                   />
                   {";"}
                   <br />
-                  {"        gap: 10px;"}
+                  {"        justify-content: "}
+                  <input
+                    type="text"
+                    placeholder=""
+                    className="rounded-sm outline-none w-[50px] text-black px-1"
+                    maxLength={10}
+                  />
+                  {";"}
                   <br />
                   {"      }"}
                   <br />
-                  {"      .item {"}
+                  {"      .building {"}
                   <br />
-                  {"        background-color: lightyellow;"}
+                  {"        width: 120px;"}
                   <br />
-                  {"        height: 100px;"}
+                  {"        height: 120px;"}
+                  <br />
+                  {"        background-color: lightgreen;"}
                   <br />
                   {"      }"}
                   <br />
@@ -66,11 +73,13 @@ const Cssq16 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {'    <div class="container">'}
+                  {'    <div class="colony">'}
                   <br />
-                  {'      <div class="item">A</div>'}
+                  {'      <div class="building">🏠 Hab Unit</div>'}
                   <br />
-                  {'      <div class="item">B</div>'}
+                  {'      <div class="building">🔬 Lab</div>'}
+                  <br />
+                  {'      <div class="building">🍽️ Mess Hall</div>'}
                   <br />
                   {"    </div>"}
                   <br />
@@ -88,4 +97,4 @@ const Cssq16 = () => {
   );
 };
 
-export default Cssq16;
+export default Cssq14;

@@ -5,7 +5,7 @@ import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 import { Link } from "react-router-dom";
 
-const Csslvl16 = () => {
+const Csslvl13 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -17,45 +17,40 @@ const Csslvl16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 13"} />
 
         <div className="flex flex-col items-center justify-center relative font-mono">
-          <div className="font-bold text-4xl mt-7">
-            <h1>Level 16: Grid Layout Basics</h1>
+          <div className="font-bold text-4xl mt-5">
+            <h1>Level 13: Box Shadow</h1>
           </div>
           <div className="py-1 px-5 text-lg text-center mt-2 leading-relaxed text-[#414040]">
             <p>
-              CSS Grid Layout is a two-dimensional layout system for the web,
-              allowing you to design web pages using rows and columns.
+              The Mars Rover moves on a dusty surface, and it casts a shadow!
+              The box-shadow property helps create a realistic shadow effect on
+              elements.
             </p>
           </div>
 
           {/* Adjusted margin using Tailwind only */}
-          <div className="px-6 py-1 text-[9px] mt-1 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+          <div className="px-6 py-1 text-[13px] mt-5 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
             <p>Example:</p>
-            <pre className="whitespace-pre-wrap font-mono ">
+            <pre className="whitespace-pre-wrap font-mono text-sm">
               <code>
                 {"<html>"}
                 <br />
-                {"   <head>"}
+                {"  <head>"}
                 <br />
                 {"    <style>"}
                 <br />
-                {"      .container {"}
+                {"      .box {"}
                 <br />
-                {"        display: grid;"}
+                {"        width: 200px;"}
                 <br />
-                {"        grid-template-columns: repeat(3, 1fr);"}
+                {"        height: 200px;"}
                 <br />
-                {"        gap: 10px;"}
+                {"        background-color: lightgreen;"}
                 <br />
-                {"      }"}
-                <br />
-                {"      .item {"}
-                <br />
-                {"        background-color: lightpink;"}
-                <br />
-                {"        height: 100px;"}
+                {"        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);"}
                 <br />
                 {"      }"}
                 <br />
@@ -65,15 +60,7 @@ const Csslvl16 = () => {
                 <br />
                 {"  <body>"}
                 <br />
-                {'    <div class="container">'}
-                <br />
-                {'      <div class="item">1</div>'}
-                <br />
-                {'      <div class="item">2</div>'}
-                <br />
-                {'      <div class="item">3</div>'}
-                <br />
-                {"    </div>"}
+                {'    <div class="box"></div>'}
                 <br />
                 {"  </body>"}
                 <br />
@@ -88,4 +75,4 @@ const Csslvl16 = () => {
   );
 };
 
-export default Csslvl16;
+export default Csslvl13;

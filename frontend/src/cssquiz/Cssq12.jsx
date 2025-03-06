@@ -4,7 +4,7 @@ import Csslayout from "../csscomponent/Csslayout";
 import Cssbutton from "../csscomponent/Cssbutton";
 import Csstitle from "../csscomponent/Csstitle";
 
-const Cssq16 = () => {
+const Cssq12 = () => {
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -16,47 +16,41 @@ const Cssq16 = () => {
       }}
     >
       <Csslayout>
-        <Csstitle title={"LEVEL 16"} />
+        <Csstitle title={"LEVEL 12"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-10  mt-5 ">
             <p>
-              Fill in the missing syntax to create a grid with two equal
-              columns.
+              Set the landing pad’s border-radius to 20px so it’s smoother for
+              safe landings!
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-1 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+            <div className="px-6 py-4 text-[13px] mt-5 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
               <pre className="whitespace-pre-wrap font-mono text-sm">
                 <code>
                   {"<html>"}
                   <br />
-                  {"   <head>"}
+                  {"  <head>"}
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .container {"}
+                  {"      .button {"}
                   <br />
-                  {"        display: grid;"}
+                  {"        width: 100px;"}
                   <br />
-                  {"        grid-template-columns: "}
+                  {"        height: 50px;"}
+                  <br />
+                  {"        background-color: purple;"}
+                  <br />
+                  {"        border-radius: "}
                   <input
                     type="text"
                     placeholder=""
-                    className="rounded-sm outline-none w-[110px] text-black px-1"
-                    maxLength={11}
+                    className="rounded-sm outline-none w-[50px] text-black px-1"
+                    maxLength={5}
                   />
                   {";"}
-                  <br />
-                  {"        gap: 10px;"}
-                  <br />
-                  {"      }"}
-                  <br />
-                  {"      .item {"}
-                  <br />
-                  {"        background-color: lightyellow;"}
-                  <br />
-                  {"        height: 100px;"}
                   <br />
                   {"      }"}
                   <br />
@@ -66,13 +60,7 @@ const Cssq16 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {'    <div class="container">'}
-                  <br />
-                  {'      <div class="item">A</div>'}
-                  <br />
-                  {'      <div class="item">B</div>'}
-                  <br />
-                  {"    </div>"}
+                  {'    <button class="button">Mars Base</button>'}
                   <br />
                   {"  </body>"}
                   <br />
@@ -88,4 +76,4 @@ const Cssq16 = () => {
   );
 };
 
-export default Cssq16;
+export default Cssq12;
