@@ -116,6 +116,11 @@ import Jslvl17 from "./Jsdefenition/Jslvl17";
 import Jslvl18 from "./Jsdefenition/Jslvl18";
 import Jslvl19 from "./Jsdefenition/Jslvl19";
 import Jslvl20 from "./Jsdefenition/Jslvl20";
+import Jslvl21 from "./Jsdefenition/Jslvl21";
+import Jslvl22 from "./Jsdefenition/Jslvl22";
+import Jslvl23 from "./Jsdefenition/Jslvl23";
+import Jslvl24 from "./Jsdefenition/Jslvl24";
+import Jslvl25 from "./Jsdefenition/Jslvl25";
 
 
 // Js Games / game
@@ -139,6 +144,11 @@ import Jsq17 from "./Jsquiz/Jsq17";
 import Jsq18 from "./Jsquiz/Jsq18";
 import Jsq19 from "./Jsquiz/Jsq19";
 import Jsq20 from "./Jsquiz/Jsq20";
+import Jsq21 from "./Jsquiz/Jsq21";
+import Jsq22 from "./Jsquiz/Jsq22";
+import Jsq23 from "./Jsquiz/Jsq23";
+import Jsq24 from "./Jsquiz/Jsq24";
+import Jsq25 from "./Jsquiz/Jsq25";
 
 // Signup/Signin User
 import Signup from "./component/Signup";
@@ -157,10 +167,9 @@ const App = () => {
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/introduction" element={<Jslvl2 />} />
-          <Route path="/game" element={<Jsq10 />} />
-          <Route path="/introduction" element={<Jslvl2 />} />
-          <Route path="/game" element={<Jsq10 />} />
+          <Route path="/introduction" element={<Jslvl5 />} />
+          <Route path="/game" element={<Jsq5 />} />
+        
         </Routes>
       </BrowserRouter>
     </>
