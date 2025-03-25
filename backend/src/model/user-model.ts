@@ -4,6 +4,11 @@ interface UserDocument extends users, Document {}
 
 const userSchema: Schema = new Schema(
   {
+    user_id: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     email: {
       type: String,
       required: true,
@@ -20,7 +25,7 @@ const userSchema: Schema = new Schema(
     timestamps: true,
   }
 );
-export const sessionModel: Model<UserDocument> = mongoose.model<UserDocument>(
+export const userModel: Model<UserDocument> = mongoose.model<UserDocument>(
   "user",
   userSchema
 );
