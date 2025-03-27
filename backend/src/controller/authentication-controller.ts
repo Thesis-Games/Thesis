@@ -5,7 +5,11 @@ import { createAuthenticationAccount } from "../services/create-authentication";
 import { checkEmailExisting } from "../services/check-email-existing-";
 import { createSessionAndDeleteToken } from "../services/create-authentication";
 import jwt from "jsonwebtoken";
+import { generateResetToken } from "../services/generate-token";
 import RequestWithSession from "../types/request-with-session";
+import { forgotPasswordService } from "../services/reset-password-service";
+import { verifyResetPasswordToken } from "../services/verify-token";
+import { updatePassword } from "../services/update-password";
 import {
   generateAcessToken,
   generateRefreshToken,
@@ -77,7 +81,7 @@ export const signin = async (
       httpOnly: true,
       secure: true,
       sameSite: "strict",
-      maxAge: 10 * 1000,
+      maxAge: 5 * 60 * 1000,
     });
 
     res.cookie("auth_refreshToken", refreshToken, {
@@ -128,6 +132,69 @@ export const profile = async (
       message: "Profile fetched successfully",
       user: session?.account_id,
       email: session?.email,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const forgotPassword = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { email } = req.body;
+    const existingEmail = await checkEmailExisting(email);
+    if (!existingEmail) {
+      throw new CustomError("Email not Found", 400);
+    }
+
+    const resetToken = generateResetToken(
+      existingEmail.id,
+      existingEmail.email
+    );
+
+    const { message } = await forgotPasswordService(
+      resetToken,
+      existingEmail.email
+    );
+
+    res.status(200).json({
+      message: message,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+export const resetPassword = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { token, newpassword } = req.body;
+
+    if (!token) {
+      throw new CustomError("No token provided", 401);
+    }
+
+    const { id, email } = await verifyResetPasswordToken(token);
+
+    const findEmail = await checkEmailExisting(email);
+    if (!findEmail) {
+      throw new CustomError("Account not Found", 400);
+    }
+    const hashedNewPassword = await hashText(newpassword);
+    if (!hashedNewPassword) {
+      throw new CustomError("Failed to hash password", 500);
+    }
+
+    const newPassword = await updatePassword(id, hashedNewPassword);
+
+    res.status(200).json({
+      message: "Password updated successfully",
+      user: newPassword,
     });
   } catch (error) {
     next(error);

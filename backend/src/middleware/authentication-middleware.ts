@@ -13,7 +13,7 @@ export const authenticationMiddleware = async (
   const accessToken = req.cookies?.auth_accessToken;
   const refreshToken = req.cookies?.auth_refreshToken;
 
-  if (!refreshToken) {
+  if (!refreshToken || !accessToken) {
     return next(new CustomError("Unauthorized", 401));
   }
 
@@ -53,7 +53,7 @@ export const authenticationMiddleware = async (
           aud: "thesisgame.app",
         },
         process.env.JWT_ACCESS_SECRET as string,
-        { expiresIn: "10s" }
+        { expiresIn: "5m" }
       );
 
       const newRefreshToken = jwt.sign(
@@ -79,7 +79,7 @@ export const authenticationMiddleware = async (
         httpOnly: true,
         secure: true,
         sameSite: "strict",
-        maxAge: 10 * 1000,
+        maxAge: 5 * 60 * 1000,
       });
 
       res.cookie("auth_refreshToken", newRefreshToken, {
