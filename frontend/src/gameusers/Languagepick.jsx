@@ -5,6 +5,7 @@ import mars from "../picture/marslg.gif";
 import moon from "../picture/moonlg.gif";
 import javascript from "../picture/javascript.jpg";
 import { Link } from "react-router-dom";
+
 const Languagepick = () => {
   return (
     <div
@@ -109,27 +110,34 @@ const Languagepick = () => {
           </div>
         </Link>
 
-        <div
-          className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
-          style={{
-            boxShadow: `
+        <Link to="/languagepick/jslevel">
+          <div
+            className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+            style={{
+              boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
                   0 0 20px rgba(255, 255, 255, 0.6), 
                   0 0 30px rgba(255, 255, 255, 0.4)
                 `,
-          }}
-        >
-          <img
-            src={moon}
-            alt="Moon"
-            className="w-full h-full object-cover rounded-lg"
-          />
-          <div className=" absolute items-center ">
-            <img src={javascript} alt="" className="w-[100px] h-[100px] " />
+            }}
+          >
+            <img
+              src={moon}
+              alt="Moon"
+              className="w-full h-full object-cover rounded-lg"
+            />
+            <div className=" absolute items-center ">
+              <img src={javascript} alt="" className="w-[100px] h-[100px] " />
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
 
+      <div className=" absolute right-20 top-14">
+        <div className="text-yellow-300 font-bold text-3xl font-mono tracking-normal">
+          <h1>Rodel S. Santillan</h1>
+        </div>
+      </div>
       <Link to="/home">
         <div className="absolute top-10 left-10 cursor-pointer">
           <svg
