@@ -65,10 +65,9 @@ const Signup = () => {
           {errors.password && (
             <p className="text-red-500">{errors.password.message}</p>
           )}
-
-          <ButtonComponent handleSignIn={handleSubmit(onSubmit)} />
         </form>
       </FormLayoutComponent>
+      <ButtonComponent handleSignIn={handleSubmit(onSubmit)} />
     </div>
   );
 };

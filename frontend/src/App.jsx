@@ -16,6 +16,9 @@ import Star3 from "./Starcomp/Star3";
 //lossgame
 import Lossgame from "./Starcomp/Lossgame";
 
+//Music Setting
+import Music from "../src/musicsetting/Musicsetting";
+
 // Html Defenition
 import Html1 from "./gamelevelhtml/Html1";
 import Html2 from "./gamelevelhtml/Html2";
@@ -177,7 +180,9 @@ const App = () => {
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/introduction" element={<Jslvl2 />} />
           <Route path="/game" element={<Jsq10 />} />
-          <Route path="/starcomp" element={<Star1 />} />
+
+          <Route path="/starcomp" element={<Lossgame />} />
+          <Route path="/musicsetting" element={<Music />} />
         </Routes>
       </BrowserRouter>
     </>
