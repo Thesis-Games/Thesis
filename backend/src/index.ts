@@ -5,6 +5,7 @@ import connectDB from "./config/mongodb-connection";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./middleware/error-handler";
 import authenticationRouter from "./routes/authentication-route";
+import leaderBoardRoute from "./routes/leader-board-route";
 const app: Application = express();
 const PORT = 3000;
 app.use(
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api", authenticationRouter);
+app.use("/api/leaderboard", leaderBoardRoute);
 
 app.use(errorHandler);
 
