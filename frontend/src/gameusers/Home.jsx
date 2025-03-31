@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import background from "../picture/earthbg.gif";
 import { Link } from "react-router-dom";
-
+import Modal from "../component/custom-modal/modal-level";
 const Home = () => {
   // Zodiac numbers from 1 to 25
-  const zodiacSigns = Array.from({ length: 25 }, (_, i) => (i + 1).toString());
 
+  const htmlLevel = Array.from({ length: 25 }, (_, i) => ({
+    category: "HTML",
+    level: (i + 1).toString(),
+  }));
   // Pagination state
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10; // How many items to show per page
 
   // Calculate current items to display
   const startIndex = currentPage * itemsPerPage;
-  const currentItems = zodiacSigns.slice(startIndex, startIndex + itemsPerPage);
+  const currentItems = htmlLevel.slice(startIndex, startIndex + itemsPerPage);
 
   // Page navigation functions
   const nextPage = () => {
-    if (startIndex + itemsPerPage < zodiacSigns.length) {
+    if (startIndex + itemsPerPage < htmlLevel.length) {
       setCurrentPage(currentPage + 1);
     }
   };
@@ -26,7 +29,14 @@ const Home = () => {
       setCurrentPage(currentPage - 1);
     }
   };
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedLevel, setSelectedLevel] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const openModal = (sign) => {
+    setSelectedCategory(sign.category);
+    setSelectedLevel(sign.level);
+    setIsModalOpen(true);
+  };
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -39,19 +49,18 @@ const Home = () => {
     >
       <div className="gap-5 flex flex-wrap justify-center font-mono ">
         {currentItems.map((sign, index) => (
-          <Link key={index} to="/introduction">
-            <div
-              className="flex items-center justify-center text-black font-bold bg-yellow-400 rounded-full w-20 h-20  hover:scale-110 transition-transform duration-300 hover:bg-yellow-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
-              style={{
-                border: "3px solid black",
-                boxShadow: `0 0 10px rgba(255, 255, 255, 0.8),
+          <div
+            className="flex items-center justify-center text-black font-bold bg-yellow-400 rounded-full w-20 h-20  hover:scale-110 transition-transform duration-300 hover:bg-yellow-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+            style={{
+              border: "3px solid black",
+              boxShadow: `0 0 10px rgba(255, 255, 255, 0.8),
                 0 0 20px rgba(255, 255, 255, 0.6),
                 0 0 30px rgba(255, 255, 255, 0.4)`,
-              }}
-            >
-              <h1 className="text-2xl">{sign}</h1>
-            </div>
-          </Link>
+            }}
+            onClick={() => openModal(sign)}
+          >
+            <h1 className="text-2xl">{sign.level}</h1>
+          </div>
         ))}
       </div>
 
@@ -66,7 +75,7 @@ const Home = () => {
         </button>
         <button
           onClick={nextPage}
-          disabled={startIndex + itemsPerPage >= zodiacSigns.length}
+          disabled={startIndex + itemsPerPage >= htmlLevel.length}
           className="bg-gray-800 text-white px-4 py-2 rounded disabled:opacity-50"
         >
           Next
@@ -94,6 +103,13 @@ const Home = () => {
           </svg>
         </div>
       </Link>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        level={selectedLevel}
+        title={selectedCategory}
+      />
     </div>
   );
 };
