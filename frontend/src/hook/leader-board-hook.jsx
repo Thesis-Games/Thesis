@@ -1,0 +1,38 @@
+import React from "react";
+import { useEffect, useState } from "react";
+import {
+  getLeaderBoard,
+  createLeaderBoardAndLevelPoints,
+} from "../services/leader-board-service";
+const LeaderBoardHook = () => {
+  const [leaderBoardData, setLeaderBoardData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const handleCreateLeaderBoardAndLevelPoints = async (data) => {
+    setLoading(true);
+    try {
+      const data = await createLeaderBoardAndLevelPoints(data);
+      handleSuccessAlert("Completed!");
+      return data;
+    } catch (error) {
+      handleErrorAlert(error.response.data.error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    const fetchLeaderBoard = async () => {
+      try {
+        const data = await getLeaderBoard();
+        setLeaderBoardData(data.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchLeaderBoard();
+  }, []);
+  return { leaderBoardData, handleCreateLeaderBoardAndLevelPoints, loading };
+};
+
+export default LeaderBoardHook;

@@ -12,8 +12,9 @@ export const createPoint = async (
   const accessToken = req.cookies?.auth_accessToken;
 
   if (!accessToken) {
-    throw new CustomError("Unauthorized", 400);
+    return next(new CustomError("Unauthorized", 400));
   }
+
   try {
     const { category, level, points } = req.body;
     const decodedAccessToken = jwt.verify(
@@ -28,82 +29,95 @@ export const createPoint = async (
     if (!checkUser) {
       const createUserLevel = await levelModel.create({
         user_id: decodedAccessToken.id,
-        level: level,
-        points: points,
-        category: category,
+        level,
+        points,
+        category,
       });
 
       const createAccountInLeaderBoard = await leaderBoardModel.create({
         user_id: decodedAccessToken.id,
         email: decodedAccessToken.email,
-        points: points,
+        points,
       });
 
-      if (!createAccountInLeaderBoard || createUserLevel) {
-        throw new CustomError("create error", 400);
+      if (!createAccountInLeaderBoard || !createUserLevel) {
+        throw new CustomError("Error creating user records", 400);
       }
+
       res.status(200).json({
         message: "Created Points",
         leaderboard: createAccountInLeaderBoard,
         level: createUserLevel,
       });
+      return;
     }
 
-    const findUserLevel = await levelModel.findOne({
+    let findUserLevel = await levelModel.findOne({
       user_id: decodedAccessToken.id,
-      level: level,
-      category: category,
+      level,
+      category,
     });
 
     if (!findUserLevel) {
       const incrementPointsFromUser = await leaderBoardModel.findOneAndUpdate(
         { user_id: decodedAccessToken.id },
-        { $inc: { points: points } },
+        { $inc: { points } },
         { new: true }
       );
 
       const createUserLevel = await levelModel.create({
-        userid: decodedAccessToken.id,
-        level: level,
-        star: points,
-        category: category,
+        user_id: decodedAccessToken.id,
+        level,
+        points,
+        category,
       });
-      res.status(200).send({
-        create: createUserLevel,
-        incrementpoint: incrementPointsFromUser,
-      });
-    }
-    const checkStar = findUserLevel?.points;
 
-    if (checkStar == 3) {
-      res.status(200).send({
-        message: "no need to add",
+      res.status(200).json({
+        message: "New level added and points incremented",
+        level: createUserLevel,
+        leaderboard: incrementPointsFromUser,
       });
       return;
     }
 
-    if (checkStar == points) {
-      res.status(200).send({
-        message: "no need to update",
-      });
-      return;
+    if (findUserLevel.points == 3) {
+      res.status(200).json({ message: "No need to add points" });
+    }
+
+    if (findUserLevel.points == points) {
+      res.status(200).json({ message: "No update needed" });
     }
 
     const updateCheckPoint = await levelModel.findOneAndUpdate(
-      { user_id: decodedAccessToken.id, level: level, category: category },
-      { points: points },
+      { user_id: decodedAccessToken.id, level, category },
+      { points },
       { new: true }
     );
+
     const incrementPointsFromUser = await leaderBoardModel.findOneAndUpdate(
       { user_id: decodedAccessToken.id },
-      { $inc: { points: points } },
+      { $inc: { points: points - findUserLevel.points } }, // Ensure points are not added twice
       { new: true }
     );
+
     res.status(200).json({
-      message: "Points successfully incremented, and star updated",
+      message: "Points successfully updated",
       leaderboard: incrementPointsFromUser,
       level: updateCheckPoint,
     });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const getLeaderBoard = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const leaderBoard = await leaderBoardModel.find().sort({ points: -1 });
+    res.status(200).json({ data: leaderBoard });
   } catch (error) {
     next(error);
   }

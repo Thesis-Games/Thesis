@@ -182,6 +182,9 @@ export const resetPassword = async (
     const { id, email } = await verifyResetPasswordToken(token);
 
     const findEmail = await checkEmailExisting(email);
+
+    console.log(id, findEmail);
+
     if (!findEmail) {
       throw new CustomError("Account not Found", 400);
     }

@@ -4,11 +4,6 @@ interface questionDocument extends question, Document {}
 
 const questionSchema: Schema = new Schema(
   {
-    user_id: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     level: {
       type: String,
       required: true,

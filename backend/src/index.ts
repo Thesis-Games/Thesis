@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middleware/error-handler";
 import authenticationRouter from "./routes/authentication-route";
 import leaderBoardRoute from "./routes/leader-board-route";
+import questionRoute from "./routes/question-route";
 const app: Application = express();
 const PORT = 3000;
 app.use(
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 app.use("/api", authenticationRouter);
 app.use("/api/leaderboard", leaderBoardRoute);
+app.use("/api/question-answer", questionRoute);
 
 app.use(errorHandler);
 

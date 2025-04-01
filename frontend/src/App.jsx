@@ -7,7 +7,7 @@ import Languagepick from "./gameusers/Languagepick";
 import Home from "./gameusers/Home";
 import Csslevel from "./gameusers/Csslevel";
 import Jslevel from "./gameusers/Jslevel";
-
+import ResetPassword from "./component/reset-password";
 //starlevel
 import Star1 from "./Starcomp/Star1";
 import Star2 from "./Starcomp/Star2";
@@ -172,6 +172,8 @@ const App = () => {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/recover" element={<Recover />} />
+          <Route path="/page/reset-password/:id" element={<ResetPassword />} />
+
           <Route path="/home" element={<Homegame />} />
           <Route path="/home/languagepick" element={<Languagepick />} />
           <Route path="/languagepick/start" element={<Home />} />
@@ -180,6 +182,7 @@ const App = () => {
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/introduction" element={<Jslvl2 />} />
           <Route path="/game" element={<Jsq10 />} />
+          <Route path="/questions/:category/:level" element={<Q1HTML />} />
 
           <Route path="/starcomp" element={<Lossgame />} />
           <Route path="/musicsetting" element={<Music />} />

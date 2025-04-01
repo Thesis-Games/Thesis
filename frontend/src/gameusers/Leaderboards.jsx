@@ -3,8 +3,10 @@ import galaxy from "../picture/background.png";
 import LeaderTitleComponent from "../component/LeaderTitleComponent";
 import ButtonLeaderboard from "../component/ButtonLeaderboard";
 import { Link } from "react-router-dom";
-
+import LeaderBoardHook from "../hook/leader-board-hook";
 const Leaderboards = () => {
+  const { leaderBoardData } = LeaderBoardHook();
+  console.log(leaderBoardData);
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col font-mono"
@@ -16,26 +18,15 @@ const Leaderboards = () => {
       }}
     >
       <div className="bg-yellow-300 p-6 rounded-lg relative max-w-lg w-full border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff ">
-        {/* Leaderboard Title */}
         <LeaderTitleComponent title={"LEADERBOARDS"} />
 
-        {/* Scrollable Container for Entries */}
         <div
           className="mt-5 overflow-y-auto bg-[#ffdfba] p-4 rounded-lg border-[#0e0e0e]  border-2 shadow-lg "
           style={{
             maxHeight: "50vh", // Limit height to prevent overflow
           }}
         >
-          {/* Leaderboard Entries */}
-          {[
-            { rank: 1, name: "Rodel Santillan", points: 1000 },
-            { rank: 2, name: "Aila Castordes", points: 900 },
-            { rank: 3, name: "Aiah Arceta", points: 800 },
-            { rank: 4, name: "Angel Santos", points: 700 },
-            { rank: 5, name: "Miss Yu", points: 600 },
-            { rank: 6, name: "Jane Smith", points: 500 },
-            { rank: 7, name: "Marianne Gonzalez", points: 400 },
-          ].map((entry, index) => (
+          {leaderBoardData.map((entry, index) => (
             <div
               key={index}
               className="bg-black rounded-full py-2 px-3 mb-3 grid grid-cols-3 items-center border-[#ffffff]  shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
@@ -45,11 +36,11 @@ const Leaderboards = () => {
             >
               {/* Rank */}
               <div className="text-white font-bold text-center">
-                {entry.rank}.
+                {index + 1}.
               </div>
 
               {/* Name */}
-              <div className="text-white font-bold truncate">{entry.name}</div>
+              <div className="text-white font-bold truncate">{entry.email}</div>
 
               {/* Star and Points */}
               <div className="flex items-center justify-end gap-2">

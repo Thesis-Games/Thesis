@@ -3,21 +3,16 @@ import background from "../picture/earthbg.gif";
 import { Link } from "react-router-dom";
 import Modal from "../component/custom-modal/modal-level";
 const Home = () => {
-  // Zodiac numbers from 1 to 25
-
   const htmlLevel = Array.from({ length: 25 }, (_, i) => ({
     category: "HTML",
     level: (i + 1).toString(),
   }));
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 10; // How many items to show per page
+  const itemsPerPage = 10;
 
-  // Calculate current items to display
   const startIndex = currentPage * itemsPerPage;
   const currentItems = htmlLevel.slice(startIndex, startIndex + itemsPerPage);
 
-  // Page navigation functions
   const nextPage = () => {
     if (startIndex + itemsPerPage < htmlLevel.length) {
       setCurrentPage(currentPage + 1);

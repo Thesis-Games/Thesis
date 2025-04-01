@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import background from "../picture/background.png";
 import life from "../picture/life.png";
 import LayoutGame from "../gamelevelhtml/LayoutGame";
 import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "./Questionbutton";
-
+import { useParams } from "react-router-dom";
+import QuestionHook from "../hook/question-hook";
 const Q1HTML = () => {
+  const { category, level } = useParams();
+  const { handleGetQuestion, questionData } = QuestionHook();
+
+  useEffect(() => {
+    handleGetQuestion(category, level);
+  }, [category, level]);
+
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -18,7 +26,7 @@ const Q1HTML = () => {
     >
       <LayoutGame>
         <div>
-          <TitleHTML title={"LEVEL 1"} />
+          <TitleHTML title={`Level ${questionData?.level}`} />
         </div>
 
         <div className="absolute flex justify-center items-center top-5 left-6 gap-2">
@@ -34,7 +42,8 @@ const Q1HTML = () => {
             <h1>Question</h1>
           </div>
           <div className="p-5 md:p-10 text-lg md:text-2xl leading-relaxed text-[#414040]  ">
-            What does HTML stand for?
+            {" "}
+            {questionData?.question}
           </div>
 
           <div className="">
@@ -45,7 +54,7 @@ const Q1HTML = () => {
             />
           </div>
         </div>
-        <Questionbutton></Questionbutton>
+        <Questionbutton />
       </LayoutGame>
     </div>
   );
