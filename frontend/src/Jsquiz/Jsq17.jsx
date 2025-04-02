@@ -1,68 +1,82 @@
-import React from "react";
-import background from "../picture/moonbg.gif";
-import Jslayout from "../Jscomponent/Jslayout";
-import Jstittle from "../Jscomponent/Jstittle";
-import Jsbutton from "../Jscomponent/Jsbutton";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import LayoutGame from "../gamelevelhtml/LayoutGame";
+import background from "../picture/earthbg.gif";
+import TitleHTML from "../gamelevelhtml/TitleHTML";
+import { LifeCompontent } from "../QuestionGame/LifeCompontent";
+import Questionbutton from "../QuestionGame/Questionbutton";
 
-const Jsq17 = () => {
+const HtmlQuestion = () => {
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    // Allow only a single character input
+    if (value.length > 3) {
+      e.target.value = value.slice(0, 3); // Restrict to the first character
+    }
+  };
+
   return (
-    <>
-      <div
-        className="w-full h-screen flex flex-col items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${background})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Jslayout>
-          <div className="w-full h-full flex flex-col  items-center justify-center font-mono">
-            <Jstittle title={"LEVEL 17"} />
+    <div
+      className="w-full h-screen relative flex items-center justify-center flex-col"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <LayoutGame>
+        <div>
+          <TitleHTML title={"LEVEL 2"} />
+        </div>
 
-            <div className="w-full text-center   px-10">
-              <p className="text-lg text-[#414040]">
-              Make your rover do a cool action on the Moon. Fill in the blank for the action.
+        <LifeCompontent></LifeCompontent>
+        <div className="flex items-center justify-center flex-col space-y-6 font-mono">
+          <div className="font-bold text-[20px] text-center px-5">
+            <h1>
+              Fill in the missing syntax to create a basic HTML structure for an
+              Earth exploration theme. Set the title to "Journey to Earth" and
+              include an &lt;h1&gt; tag with the text "Let's Explore Earth!"
+            </h1>
+          </div>
+
+          <div className="">
+            <div className="text-[#ffffff] bg-[#222] p-5 rounded-md">
+              <p>
+                &lt;html&gt; <br />
+                &lt;head&gt;
+                <br />
+                &lt;title&gt;
+                <input
+                  type="text"
+                  placeholder="Journey to Earth"
+                  className="rounded-sm outline-none w-[85px] text-black px-1"
+                  maxLength={10}
+                />
+                &lt;/title&gt; <br />
+                &lt;/head&gt;
+                <br />
+                &lt;body&gt;
+                <br />
+                &lt;h1&gt;
+                <input
+                  type="text"
+                  placeholder="Let's Explore Earth!"
+                  className="rounded-sm outline-none w-[85px] text-black px-1"
+                  maxLength={10}
+                />
+                &lt;/h1&gt;
+                <br />
+                &lt;/body&gt; <br />
+                &lt;/html&gt;
               </p>
             </div>
-
-            {/* Code Block - Now Centered */}
-            <div className="w-full flex justify-center items-center mt-10">
-              <div className="bg-[#222] rounded-md text-white text-sm   ">
-                <pre className="whitespace-pre-wrap leading-relaxed px-9 py-5">
-                <code>
-        {'let moonRover = {'}
-        <br />
-        {'  name: "Zoomer",'}
-        <br />
-        {"  "}
-        <input
-          type="text"
-          placeholder=""
-          className="rounded-sm outline-none w-[85px] text-black px-1"
-          maxLength={10}
-        />
-        {": function() {"}
-        <br />
-        {'    console.log(this.name + " rolls fast on the Moon!");'}
-        <br />
-        {"  }"}
-        <br />
-        {"};"}
-        <br />
-        <br />
-        {"moonRover.roll();"}
-      </code>
-                </pre>
-              </div>
-            </div>
           </div>
-        </Jslayout>
-        <Jsbutton />
-      </div>
-    </>
+        </div>
+      </LayoutGame>
+      <Questionbutton></Questionbutton>
+    </div>
   );
 };
 
-export default Jsq17;
+export default HtmlQuestion;

@@ -19,15 +19,19 @@ const Cssq15 = () => {
         <Csstitle title={"LEVEL 15"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Align the Mars base modules to the top of the container for proper
               setup!
             </p>
+            <p className="text-sm text-gray-400 mt-2">
+              <strong>Hint:</strong> Use <code>align-items</code> with a value
+              that positions elements at the **top** of the flex container.
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="px-6 py-4 text-[10px] mt-5 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
-              <pre className="whitespace-pre-wrap font-mono ">
+              <pre className="whitespace-pre-wrap font-mono">
                 <code>
                   {"<html>"}
                   <br />
@@ -42,7 +46,7 @@ const Cssq15 = () => {
                   {"        align-items: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="flex-start"
                     className="rounded-sm outline-none w-[50px] text-black px-1"
                     maxLength={10}
                   />
@@ -87,7 +91,7 @@ const Cssq15 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

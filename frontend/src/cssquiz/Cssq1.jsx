@@ -29,9 +29,12 @@ const Cssq1 = () => {
                   Fill in the missing syntax to set the background color to
                   "darkgrey" and the text color to "white".
                 </p>
+                <p className="text-sm text-gray-400">
+                  Hint: Use CSS color names like "darkgrey" and "white".
+                </p>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <div className=" flex   px- py-4 text-[13px] leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+                <div className="flex px- py-4 text-[13px] leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
                   <pre className="whitespace-pre-wrap font-mono text-sm">
                     <code>
                       {"<html>"}
@@ -45,7 +48,7 @@ const Cssq1 = () => {
                       {"        background-color: "}
                       <input
                         type="text"
-                        placeholder=""
+                        placeholder="e.g., darkgrey"
                         className="rounded-sm outline-none w-[70px] text-black px-1"
                         maxLength={10}
                       />
@@ -54,7 +57,7 @@ const Cssq1 = () => {
                       {"        color: "}
                       <input
                         type="text"
-                        placeholder=""
+                        placeholder="e.g., white"
                         className="rounded-sm outline-none w-[45px] text-black px-1"
                         maxLength={10}
                       />

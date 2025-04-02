@@ -19,10 +19,13 @@ const Cssq2 = () => {
         <Csstitle title={"LEVEL 2"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Fill in the missing syntax to set the font size to 40px and the
               font family to 'Verdana'.
+            </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use "40px" for font size and "Verdana" for font family.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -40,18 +43,18 @@ const Cssq2 = () => {
                   {"        font-size: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 40px"
                     className="rounded-sm outline-none w-[40px] text-black px-1"
-                    maxLength={4}
+                    maxLength={5}
                   />
                   {";"}
                   <br />
                   {"        font-family: "}
                   <input
                     type="text"
-                    placeholder=""
-                    className="rounded-sm outline-none w-[65px] text-black px-1 mt-2 "
-                    maxLength={7}
+                    placeholder="e.g., Verdana"
+                    className="rounded-sm outline-none w-[65px] text-black px-1 mt-2"
+                    maxLength={8}
                   />
                   {";"}
                   <br />
@@ -74,7 +77,7 @@ const Cssq2 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };
