@@ -26,6 +26,12 @@ const Jsq6 = () => {
                 Loops let you repeat fun actions, like checking Moon spots over
                 and over.
               </p>
+
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> The loop should run as many times as
+                there are items in the array. Use the length of the array to set
+                the loop limit.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

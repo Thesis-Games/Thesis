@@ -19,12 +19,16 @@ const Jsq4 = () => {
       >
         <Jslayout>
           <div className="w-full h-full flex flex-col  items-center justify-center font-mono">
-            <Jstittle title={"LEVEL 3"} />
+            <Jstittle title={"LEVEL 4"} />
 
             <div className="w-full text-center   px-10">
               <p className="text-lg text-[#414040]">
                 You’re excited to land on the Moon! Fill in the blank to make a
                 function that says "Yay, I’m on the Moon!"
+              </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> The condition inside the `if` statement
+                should check if the variable is equal to "yes".
               </p>
             </div>
 

@@ -18,47 +18,52 @@ const Jsq22 = () => {
         }}
       >
         <Jslayout>
-          <div className="w-full h-full flex flex-col  items-center justify-center font-mono">
+          <div className="w-full h-full flex flex-col items-center justify-center font-mono">
             <Jstittle title={"LEVEL 22"} />
 
-            <div className="w-full text-center   px-3">
+            <div className="w-full text-center px-3">
               <p className="text-lg text-[#414040]">
-              Make buttons for your rover’s actions. Fill in the blanks for the button names.
+                Make buttons for your rover’s actions. Fill in the blanks for
+                the button names.
+              </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> You need to create buttons for each
+                action, such as "move" and "stop."
               </p>
             </div>
 
             {/* Code Block - Now Centered */}
             <div className="w-full flex justify-center items-center mt-10">
-              <div className="bg-[#222] rounded-md text-white text-sm   ">
+              <div className="bg-[#222] rounded-md text-white text-sm">
                 <pre className="whitespace-pre-wrap leading-relaxed px-1 py-10">
-                <code>
-  {"document.getElementById(\""}
-  <input
-    type="text"
-    placeholder=""
-    className="rounded-sm outline-none w-[85px] text-black px-1"
-    maxLength={10}
-  />
-  {"\").addEventListener(\"click\", function() {"}
-  <br />
-  {'  console.log("Rover goes on the Moon!");'}
-  <br />
-  {"});"}
-  <br />
-  <br />
-  {"document.getElementById(\""}
-  <input
-    type="text"
-    placeholder=""
-    className="rounded-sm outline-none w-[85px] text-black px-1"
-    maxLength={10}
-  />
-  {"\").addEventListener(\"click\", function() {"}
-  <br />
-  {'  console.log("Rover stops on the Moon!");'}
-  <br />
-  {"});"}
-</code>
+                  <code>
+                    {'document.getElementById("'}
+                    <input
+                      type="text"
+                      placeholder="moveButton"
+                      className="rounded-sm outline-none w-[85px] text-black px-1"
+                      maxLength={10}
+                    />
+                    {'").addEventListener("click", function() {'}
+                    <br />
+                    {'  console.log("Rover goes on the Moon!");'}
+                    <br />
+                    {"});"}
+                    <br />
+                    <br />
+                    {'document.getElementById("'}
+                    <input
+                      type="text"
+                      placeholder="stopButton"
+                      className="rounded-sm outline-none w-[85px] text-black px-1"
+                      maxLength={10}
+                    />
+                    {'").addEventListener("click", function() {'}
+                    <br />
+                    {'  console.log("Rover stops on the Moon!");'}
+                    <br />
+                    {"});"}
+                  </code>
                 </pre>
               </div>
             </div>

@@ -27,6 +27,11 @@ const Jsq2 = () => {
                 the blanks for a number (Moon’s gravity) and a yes/no answer (is
                 it quiet).
               </p>
+
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Use a number for gravity and{" "}
+                <code>true</code> or <code>false</code> for quietness.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

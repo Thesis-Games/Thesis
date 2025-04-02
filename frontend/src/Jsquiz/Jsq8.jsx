@@ -26,6 +26,10 @@ const Jsq8 = () => {
                 Click a button to make your rover jump. Fill in the blank for
                 the button name.
               </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> The button's ID should go inside the
+                quotes.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

@@ -26,6 +26,11 @@ const Jsq4 = () => {
                 List some Moon spots and pick the second one. Fill in the blank
                 to show it.
               </p>
+
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Remember that arrays start at index 0. To
+                get the second item, you need to access index 1.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}
