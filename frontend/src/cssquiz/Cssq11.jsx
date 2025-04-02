@@ -19,14 +19,18 @@ const Cssq11 = () => {
         <Csstitle title={"LEVEL 11"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Fill in the missing syntax to change the background color to red
               when hovering over the Mars Mission button.
             </p>
+            <p className="text-sm text-gray-400">
+              Hint: To change the background color on hover, use `:hover` and
+              set the `background-color` to `red`.
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <div className="px-6 py-4 text-[13px]  leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
+            <div className="px-6 py-4 text-[13px] leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
               <pre className="whitespace-pre-wrap font-mono text-sm">
                 <code>
                   {"<html>"}
@@ -46,11 +50,11 @@ const Cssq11 = () => {
                   {"        transition: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., background-color 0.5s"
                     className="rounded-sm outline-none w-[130px] text-black px-1"
                     maxLength={16}
                   />
-                  {" 0.5s;"}
+                  {";"}
                   <br />
                   {"      }"}
                   <br />
@@ -59,7 +63,7 @@ const Cssq11 = () => {
                   {"        background-color: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="red"
                     className="rounded-sm outline-none w-[30px] text-black px-1"
                     maxLength={3}
                   />
@@ -84,7 +88,7 @@ const Cssq11 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

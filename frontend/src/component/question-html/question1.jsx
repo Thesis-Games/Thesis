@@ -49,4 +49,4 @@ const Question1 = ({ data, handleAnswerChange, answerInput }) => {
   );
 };
 
-export default Question1;
+export default SpaceAdventure;

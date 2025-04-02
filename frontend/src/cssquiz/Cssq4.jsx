@@ -19,10 +19,13 @@ const Cssq4 = () => {
         <Csstitle title={"LEVEL 4"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
-              Fill in the missing syntax to set the width to 300px and the
-              height to 300px.
+              Fill in the missing syntax to set the padding to 15px and the
+              margin to 30px.
+            </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use "15px" for padding and "30px" for margin.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -35,27 +38,25 @@ const Cssq4 = () => {
                   <br />
                   {"    <style>"}
                   <br />
-                  {"      .planet {"}
+                  {"      .space {"}
                   <br />
-                  {"        width: "}
+                  {"        padding: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 15px"
                     className="rounded-sm outline-none w-[80px] text-black px-1 mt-1"
                     maxLength={10}
                   />
                   {";"}
                   <br />
-                  {"        height: "}
+                  {"        margin: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 30px"
                     className="rounded-sm outline-none w-[80px] text-black px-1 mt-1"
                     maxLength={10}
                   />
                   {";"}
-                  <br />
-                  {"        background-color: yellow;"}
                   <br />
                   {"      }"}
                   <br />
@@ -65,7 +66,7 @@ const Cssq4 = () => {
                   <br />
                   {"  <body>"}
                   <br />
-                  {"    <div class='planet'></div>"}
+                  {"    <div class='space'>Meteor Shower</div>"}
                   <br />
                   {"  </body>"}
                   <br />
@@ -76,7 +77,7 @@ const Cssq4 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

@@ -25,6 +25,10 @@ const Jsq10 = () => {
               <p className="text-lg text-[#414040]">
                 Check the Moon’s condition. Fill in the blank to pick a state.
               </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Choose the correct Moon condition to fill
+                in the blank.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

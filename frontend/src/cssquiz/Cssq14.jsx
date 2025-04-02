@@ -19,15 +19,19 @@ const Cssq14 = () => {
         <Csstitle title={"LEVEL 14"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               The Martian colony buildings should be stacked in a column instead
               of a row. Complete the missing code!
             </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use the `flex-direction` property to control the arrangement
+              of the buildings.
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="px-6 py-4 text-[10px] mt-2 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
-              <pre className="whitespace-pre-wrap font-mono ">
+              <pre className="whitespace-pre-wrap font-mono">
                 <code>
                   {"<html>"}
                   <br />
@@ -40,7 +44,7 @@ const Cssq14 = () => {
                   {"        display: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="flex"
                     className="rounded-sm outline-none w-[50px] text-black px-1 mb-2"
                     maxLength={10}
                   />
@@ -49,7 +53,16 @@ const Cssq14 = () => {
                   {"        justify-content: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="center"
+                    className="rounded-sm outline-none w-[50px] text-black px-1"
+                    maxLength={10}
+                  />
+                  {";"}
+                  <br />
+                  {"        flex-direction: "}
+                  <input
+                    type="text"
+                    placeholder="column"
                     className="rounded-sm outline-none w-[50px] text-black px-1"
                     maxLength={10}
                   />
@@ -92,7 +105,7 @@ const Cssq14 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

@@ -26,6 +26,9 @@ const Jsq7 = () => {
                 Make a folder for your Moon rover and show its speed. Fill in
                 the blank.
               </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Access the "speed" property.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

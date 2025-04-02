@@ -19,10 +19,14 @@ const Cssq12 = () => {
         <Csstitle title={"LEVEL 12"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Set the landing pad’s border-radius to 20px so it’s smoother for
               safe landings!
+            </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use `border-radius` to round the corners of the element and
+              make it smoother.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -46,7 +50,7 @@ const Cssq12 = () => {
                   {"        border-radius: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 20px"
                     className="rounded-sm outline-none w-[50px] text-black px-1"
                     maxLength={5}
                   />
@@ -71,7 +75,7 @@ const Cssq12 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

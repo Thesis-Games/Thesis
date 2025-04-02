@@ -21,16 +21,22 @@ const Jsq1 = () => {
           <div className="w-full h-full flex flex-col  items-center justify-center font-mono">
             <Jstittle title={"LEVEL 1"} />
 
-            <div className="w-full text-center  mt-5 px-10">
+            <div className="w-full text-center mt-5 px-10">
               <p className="text-lg text-[#414040]">
                 Fill in the missing syntax to declare a variable for the
                 spaceship name.
+              </p>
+              {/* Hint Inside the same block */}
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Use the <code>let</code> keyword to
+                declare a variable, and <code>console.log()</code> to output the
+                value of the variable.
               </p>
             </div>
 
             {/* Code Block - Now Centered */}
             <div className="w-full flex justify-center items-center mt-10">
-              <div className="bg-[#222] rounded-md text-white text-sm   ">
+              <div className="bg-[#222] rounded-md text-white text-sm">
                 <pre className="whitespace-pre-wrap leading-relaxed px-9 py-5">
                   <code>
                     {"let "}

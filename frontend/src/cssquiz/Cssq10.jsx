@@ -19,10 +19,14 @@ const Cssq10 = () => {
         <Csstitle title={"LEVEL 10"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Fill in the missing syntax to transition the width property over 1
               second.
+            </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use `transition` to specify which property you want to
+              animate, followed by the duration.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -46,7 +50,7 @@ const Cssq10 = () => {
                   {"        transition: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., width"
                     className="rounded-sm outline-none w-[80px] text-black px-1"
                     maxLength={15}
                   />
@@ -59,7 +63,7 @@ const Cssq10 = () => {
                   {"        background-color: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., red"
                     className="rounded-sm outline-none w-[80px] text-black px-1"
                     maxLength={15}
                   />
@@ -84,7 +88,7 @@ const Cssq10 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };
