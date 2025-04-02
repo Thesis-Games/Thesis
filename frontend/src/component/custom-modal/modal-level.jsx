@@ -1,8 +1,11 @@
 import React from "react";
 import ModalTitle from "./modal-title";
 import { StarRating } from "../../utils/star-rating";
+import LevelHook from "../../hook/level-hook";
 const Modal = ({ isOpen, onClose, level, title, data }) => {
   if (!isOpen) return null;
+
+  const { handleValidateLevel } = LevelHook();
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -31,7 +34,10 @@ const Modal = ({ isOpen, onClose, level, title, data }) => {
           >
             Close
           </button>
-          <button className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]">
+          <button
+            className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
+            onClick={() => handleValidateLevel(title, level)}
+          >
             Continue
           </button>
         </div>

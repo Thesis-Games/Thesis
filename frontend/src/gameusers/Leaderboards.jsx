@@ -9,7 +9,7 @@ const Leaderboards = () => {
   console.log(leaderBoardData);
   return (
     <div
-      className="w-full h-screen relative flex items-center justify-center flex-col font-mono"
+      className="w-full h-screen relative flex items-center justify-center flex-col font-mono "
       style={{
         backgroundImage: `url(${galaxy})`,
         backgroundSize: "cover",
@@ -17,7 +17,7 @@ const Leaderboards = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-yellow-300 p-6 rounded-lg relative max-w-lg w-full border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff ">
+      <div className="bg-yellow-300 p-6 rounded-lg relative max-w-lg w-full border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff  px-12 py-12">
         <LeaderTitleComponent title={"LEADERBOARDS"} />
 
         <div
@@ -62,9 +62,7 @@ const Leaderboards = () => {
         </div>
 
         {/* Close Button */}
-        <div className="mt-5 text-center">
-          <ButtonLeaderboard></ButtonLeaderboard>
-        </div>
+        <ButtonLeaderboard />
       </div>
     </div>
   );

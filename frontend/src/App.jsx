@@ -184,14 +184,15 @@ const App = () => {
           <Route path="/languagepick/jslevel" element={<Jslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/introduction" element={<Jslvl2 />} />
-          <Route
-            path="/questions/html/:category/:level"
-            element={<HtmlQuestion />}
-          />
+
           <Route path="/starcomp" element={<Lossgame />} />
           <Route path="/musicsetting" element={<Music />} />
 
           {/* html route */}
+          <Route
+            path="/questions/html/:category/:level"
+            element={<HtmlQuestion />}
+          />
         </Routes>
       </BrowserRouter>
     </>

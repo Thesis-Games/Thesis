@@ -7,14 +7,21 @@ export const getLeaderBoard = async () => {
     throw error;
   }
 };
-export const createLeaderBoardAndLevelPoints = async (data) => {
+export const createLeaderBoardAndLevelPoints = async (
+  category,
+  level,
+  points
+) => {
   try {
     const response = await axios.post(
       "http://localhost:3000/api/leaderboard/create-point",
       {
-        category: data.category,
-        level: data.level,
-        points: data.points,
+        category: category,
+        level: level,
+        points: points,
+      },
+      {
+        withCredentials: true,
       }
     );
     return response.data;

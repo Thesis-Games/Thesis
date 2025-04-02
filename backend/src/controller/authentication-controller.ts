@@ -203,3 +203,8 @@ export const resetPassword = async (
     next(error);
   }
 };
+export const logout = (req: Request, res: Response): void => {
+  res.clearCookie("auth_accessToken");
+  res.clearCookie("auth_refreshToken");
+  res.status(200).json({ message: "Logged out successfully" });
+};

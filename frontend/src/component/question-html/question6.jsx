@@ -1,6 +1,7 @@
 import React from "react";
 
-const Question2 = ({ data, handleAnswerChange, answerInput }) => {
+const Question6 = ({ data, handleAnswerChange, answerInput }) => {
+  console.log(data);
   return (
     <div className="flex items-center justify-center flex-col relative space-y-6 font-mono">
       <div className="font-bold  text-2xl text-center px-5">
@@ -13,23 +14,16 @@ const Question2 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;html&gt; <br></br>
             &lt;body&gt;
             <br></br>
+            &lt;button onclick="
             <input
               type="text"
               placeholder=""
-              name="answer1"
+              className="rounded-sm outline-none w-[200px] text-black"
               onChange={handleAnswerChange}
               value={answerInput.answer1}
-              className="rounded-sm outline-none w-[30px] text-black"
-            />
-            In the year 2050, humans are ready to embark on a journey to Mars.h
-            <input
-              type="text"
-              placeholder=""
-              className="rounded-sm outline-none w-[30px] text-black"
-              name="answer2"
-              onChange={handleAnswerChange}
-              value={answerInput.answer2}
-            />
+              name="answer1"
+             />
+            "&gt;
             <br></br>
             &lt;/body&gt; <br></br>&lt;/html&gt;
           </p>
@@ -39,4 +33,4 @@ const Question2 = ({ data, handleAnswerChange, answerInput }) => {
   );
 };
 
-export default Question2;
+export default Question6;

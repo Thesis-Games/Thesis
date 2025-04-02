@@ -5,15 +5,24 @@ import {
   createLeaderBoardAndLevelPoints,
 } from "../services/leader-board-service";
 import { handleErrorAlert, handleSuccessAlert } from "../component/sweet-alert";
+
 const LeaderBoardHook = () => {
   const [leaderBoardData, setLeaderBoardData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const handleCreateLeaderBoardAndLevelPoints = async (data) => {
+  const handleCreateLeaderBoardAndLevelPoints = async (
+    category,
+    level,
+    points
+  ) => {
     setLoading(true);
     try {
-      const data = await createLeaderBoardAndLevelPoints(data);
-      handleSuccessAlert("Completed!");
+      const data = await createLeaderBoardAndLevelPoints(
+        category,
+        level,
+        points
+      );
+
       return data;
     } catch (error) {
       handleErrorAlert(error.response.data.error);

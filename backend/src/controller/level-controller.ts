@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import e, { Request, Response, NextFunction } from "express";
 import { CustomError } from "../utils/custom-error";
 import { levelModel } from "../model/level-model";
 import jwt from "jsonwebtoken";
@@ -22,7 +22,6 @@ export const getFinishLevel = async (
       process.env.JWT_ACCESS_SECRET as string
     ) as { id: string; email: string };
 
-    console.log(decodedAccessToken);
     const findLevel = await levelModel.find({
       user_id: decodedAccessToken.id,
       category: category,
@@ -64,7 +63,7 @@ export const getLevel = async (
   }
 };
 
-export const levelValidateBeforeProceed = async (
+export const levelValidation = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -76,7 +75,17 @@ export const levelValidateBeforeProceed = async (
   }
   try {
     const { category, level } = req.body;
-    const convertedLevel = Number(level - 1);
+
+    const levelNumber = Number(level - 1);
+    if (level == 1) {
+      res.status(200).json({
+        category: category,
+        level: level,
+        message: "Level validated successfully",
+      });
+
+      return;
+    }
     const decodedAccessToken = jwt.verify(
       accessToken,
       process.env.JWT_ACCESS_SECRET as string
@@ -85,14 +94,18 @@ export const levelValidateBeforeProceed = async (
     const findLevel = await levelModel.findOne({
       user_id: decodedAccessToken.id,
       category: category,
-      level: convertedLevel,
+      level: levelNumber.toString(),
     });
 
     if (!findLevel) {
       throw new CustomError("Level not found", 404);
     }
 
-    res.status(200).json({ data: findLevel });
+    res.status(200).json({
+      category: category,
+      level: level,
+      message: "Level validated successfully",
+    });
   } catch (error) {
     next(error);
   }

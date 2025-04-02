@@ -5,8 +5,10 @@ import mars from "../picture/marslg.gif";
 import moon from "../picture/moonlg.gif";
 import javascript from "../picture/javascript.jpg";
 import { Link } from "react-router-dom";
-
+import ProfileHook from "../hook/profile-hook";
 const Languagepick = () => {
+  const { profile } = ProfileHook();
+
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -135,7 +137,7 @@ const Languagepick = () => {
 
       <div className=" absolute right-20 top-14">
         <div className="text-yellow-300 font-bold text-3xl font-mono tracking-normal">
-          <h1>Rodel S. Santillan</h1>
+          <h1>{profile?.email}</h1>
         </div>
       </div>
       <Link to="/home">
