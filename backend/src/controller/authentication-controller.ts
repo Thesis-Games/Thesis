@@ -81,7 +81,7 @@ export const signin = async (
       httpOnly: true,
       secure: true,
       sameSite: "strict",
-      maxAge: 5 * 60 * 1000,
+      maxAge: 60 * 60 * 1000,
     });
 
     res.cookie("auth_refreshToken", refreshToken, {

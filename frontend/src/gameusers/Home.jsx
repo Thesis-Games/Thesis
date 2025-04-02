@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import background from "../picture/earthbg.gif";
 import { Link } from "react-router-dom";
 import Modal from "../component/custom-modal/modal-level";
+import LevelHook from "../hook/level-hook";
+import { getLevelPoints } from "../utils/get-level-point";
+import { renderStars } from "../utils/render-star";
 const Home = () => {
+  const { handleGetLevel, level, levelModalData, handleGetLevelModal } =
+    LevelHook();
+
   const htmlLevel = Array.from({ length: 25 }, (_, i) => ({
     category: "HTML",
     level: (i + 1).toString(),
   }));
+
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
 
@@ -24,14 +31,22 @@ const Home = () => {
       setCurrentPage(currentPage - 1);
     }
   };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+
   const openModal = (sign) => {
+    handleGetLevelModal(sign.category, sign.level);
     setSelectedCategory(sign.category);
     setSelectedLevel(sign.level);
     setIsModalOpen(true);
   };
+
+  useEffect(() => {
+    handleGetLevel("HTML");
+  }, []);
+
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"
@@ -43,20 +58,33 @@ const Home = () => {
       }}
     >
       <div className="gap-5 flex flex-wrap justify-center font-mono ">
-        {currentItems.map((sign, index) => (
-          <div
-            className="flex items-center justify-center text-black font-bold bg-yellow-400 rounded-full w-20 h-20  hover:scale-110 transition-transform duration-300 hover:bg-yellow-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
-            style={{
-              border: "3px solid black",
-              boxShadow: `0 0 10px rgba(255, 255, 255, 0.8),
-                0 0 20px rgba(255, 255, 255, 0.6),
-                0 0 30px rgba(255, 255, 255, 0.4)`,
-            }}
-            onClick={() => openModal(sign)}
-          >
-            <h1 className="text-2xl">{sign.level}</h1>
-          </div>
-        ))}
+        {currentItems.map((sign, index) => {
+          const points = getLevelPoints(sign.level, level);
+          const isCompleted = points > 0;
+          return (
+            <div
+              key={index}
+              className={`flex flex-col items-center justify-center text-black font-bold rounded-full w-20 h-20 hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff] ${
+                isCompleted
+                  ? "bg-yellow-400 hover:bg-yellow-300"
+                  : "bg-gray-400 hover:bg-gray-300"
+              }`}
+              style={{
+                border: "3px solid black",
+                boxShadow: `0 0 10px rgba(255, 255, 255, 0.8),
+                  0 0 20px rgba(255, 255, 255, 0.6),
+                  0 0 30px rgba(255, 255, 255, 0.4)`,
+              }}
+              onClick={() => openModal(sign)}
+            >
+              <h1 className="text-2xl">{sign.level}</h1>
+              {isCompleted && (
+                <div className="text-xs mt-1">{renderStars(points)}</div>
+              )}
+              {!isCompleted && <div className="text-xs mt-1">LOCKED</div>}
+            </div>
+          );
+        })}
       </div>
 
       {/* Pagination Buttons */}
@@ -104,6 +132,7 @@ const Home = () => {
         onClose={() => setIsModalOpen(false)}
         level={selectedLevel}
         title={selectedCategory}
+        data={levelModalData}
       />
     </div>
   );

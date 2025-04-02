@@ -1,19 +1,23 @@
 import { Request, Response, NextFunction } from "express";
 import { CustomError } from "../utils/custom-error";
-import { questionModel } from "../model/question-model";
+import { htmlQuestionModel } from "../model/html-model";
 export const createQuestion = async (
   req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> => {
   try {
-    const { category, level, question, answer } = req.body;
+    const { category, level, question, answer1, answer2, answer3, answer4 } =
+      req.body;
 
-    const createQuestion = await questionModel.create({
+    const createQuestion = await htmlQuestionModel.create({
       category,
       level,
       question,
-      answer,
+      answer1,
+      answer2,
+      answer3,
+      answer4,
     });
     res.status(200).json({
       message: "Question created successfully",
@@ -30,7 +34,7 @@ export const getByCategoryAndLevel = async (
 ): Promise<void> => {
   try {
     const { category, level } = req.params;
-    const question = await questionModel.findOne({
+    const question = await htmlQuestionModel.findOne({
       category,
       level,
     });

@@ -32,9 +32,8 @@ const Q21HTML = () => {
           <div className="font-bold   text-lg text-center px-10">
             <h1>
               Fill in the missing syntax to create a table with headers "Rocket"
-              and "Destination," and add two rows with values "Falcon 9" and
-              "Moon" (for the first row), and "Starship" and "Mars" (for the
-              second row).
+              and "Destination," and add one row with values "Falcon 9" and
+              "Moon."
             </h1>
           </div>
 

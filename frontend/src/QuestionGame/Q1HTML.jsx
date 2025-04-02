@@ -14,6 +14,7 @@ const Q1HTML = () => {
     handleGetQuestion(category, level);
   }, [category, level]);
 
+  console.log(questionData);
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col"

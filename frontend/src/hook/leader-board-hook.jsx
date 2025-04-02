@@ -4,6 +4,7 @@ import {
   getLeaderBoard,
   createLeaderBoardAndLevelPoints,
 } from "../services/leader-board-service";
+import { handleErrorAlert, handleSuccessAlert } from "../component/sweet-alert";
 const LeaderBoardHook = () => {
   const [leaderBoardData, setLeaderBoardData] = useState([]);
   const [loading, setLoading] = useState(false);

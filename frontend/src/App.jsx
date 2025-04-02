@@ -163,6 +163,9 @@ import Jsq25 from "./Jsquiz/Jsq25";
 // Signup/Signin User
 import Signup from "./component/Signup";
 import Recover from "./component/Recover";
+
+//html
+import HtmlQuestion from "./pages/html-question";
 const App = () => {
   return (
     <>
@@ -181,11 +184,14 @@ const App = () => {
           <Route path="/languagepick/jslevel" element={<Jslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/introduction" element={<Jslvl2 />} />
-          <Route path="/game" element={<Jsq10 />} />
-          <Route path="/questions/:category/:level" element={<Q1HTML />} />
-
+          <Route
+            path="/questions/html/:category/:level"
+            element={<HtmlQuestion />}
+          />
           <Route path="/starcomp" element={<Lossgame />} />
           <Route path="/musicsetting" element={<Music />} />
+
+          {/* html route */}
         </Routes>
       </BrowserRouter>
     </>
