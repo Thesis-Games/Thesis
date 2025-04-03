@@ -5,7 +5,7 @@ import Jstittle from "../Jscomponent/Jstittle";
 import Jsbutton from "../Jscomponent/Jsbutton";
 import { Link } from "react-router-dom";
 
-const Jsq20 = () => {
+const Jsq21 = () => {
   return (
     <>
       <div
@@ -56,4 +56,4 @@ const Jsq20 = () => {
   );
 };
 
-export default Jsq20;
+export default Jsq21;
