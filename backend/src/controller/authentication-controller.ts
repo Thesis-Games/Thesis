@@ -81,7 +81,7 @@ export const signin = async (
       httpOnly: true,
       secure: true,
       sameSite: "strict",
-      maxAge: 5 * 60 * 1000,
+      maxAge: 60 * 60 * 1000,
     });
 
     res.cookie("auth_refreshToken", refreshToken, {
@@ -182,6 +182,9 @@ export const resetPassword = async (
     const { id, email } = await verifyResetPasswordToken(token);
 
     const findEmail = await checkEmailExisting(email);
+
+    console.log(id, findEmail);
+
     if (!findEmail) {
       throw new CustomError("Account not Found", 400);
     }
@@ -199,4 +202,9 @@ export const resetPassword = async (
   } catch (error) {
     next(error);
   }
+};
+export const logout = (req: Request, res: Response): void => {
+  res.clearCookie("auth_accessToken");
+  res.clearCookie("auth_refreshToken");
+  res.status(200).json({ message: "Logged out successfully" });
 };

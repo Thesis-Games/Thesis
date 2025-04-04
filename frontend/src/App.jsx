@@ -7,7 +7,7 @@ import Languagepick from "./gameusers/Languagepick";
 import Home from "./gameusers/Home";
 import Csslevel from "./gameusers/Csslevel";
 import Jslevel from "./gameusers/Jslevel";
-
+import ResetPassword from "./component/reset-password";
 //starlevel
 import Star1 from "./Starcomp/Star1";
 import Star2 from "./Starcomp/Star2";
@@ -15,6 +15,9 @@ import Star3 from "./Starcomp/Star3";
 
 //lossgame
 import Lossgame from "./Starcomp/Lossgame";
+
+//Music Setting
+import Music from "../src/musicsetting/Musicsetting";
 
 // Html Defenition
 import Html1 from "./gamelevelhtml/Html1";
@@ -160,6 +163,9 @@ import Jsq25 from "./Jsquiz/Jsq25";
 // Signup/Signin User
 import Signup from "./component/Signup";
 import Recover from "./component/Recover";
+
+//html
+import HtmlQuestion from "./pages/html-question";
 const App = () => {
   return (
     <>
@@ -169,6 +175,8 @@ const App = () => {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/recover" element={<Recover />} />
+          <Route path="/page/reset-password/:id" element={<ResetPassword />} />
+
           <Route path="/home" element={<Homegame />} />
           <Route path="/home/languagepick" element={<Languagepick />} />
           <Route path="/languagepick/start" element={<Home />} />
@@ -176,8 +184,15 @@ const App = () => {
           <Route path="/languagepick/jslevel" element={<Jslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/introduction" element={<Jslvl2 />} />
-          <Route path="/game" element={<Jsq10 />} />
-          <Route path="/starcomp" element={<Star1 />} />
+
+          <Route path="/starcomp" element={<Lossgame />} />
+          <Route path="/musicsetting" element={<Music />} />
+
+          {/* html route */}
+          <Route
+            path="/questions/html/:category/:level"
+            element={<HtmlQuestion />}
+          />
         </Routes>
       </BrowserRouter>
     </>

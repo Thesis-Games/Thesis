@@ -19,10 +19,14 @@ const Cssq16 = () => {
         <Csstitle title={"LEVEL 16"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-5 mt-2">
             <p>
               Fill in the missing syntax to create a grid with two equal
               columns.
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              <strong>Hint:</strong> Use <code>grid-template-columns</code> with
+              a value that creates two **equal** columns.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -42,7 +46,7 @@ const Cssq16 = () => {
                   {"        grid-template-columns: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="1fr 1fr"
                     className="rounded-sm outline-none w-[110px] text-black px-1"
                     maxLength={11}
                   />
@@ -83,7 +87,7 @@ const Cssq16 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

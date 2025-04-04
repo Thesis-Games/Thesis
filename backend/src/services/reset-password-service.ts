@@ -4,7 +4,6 @@ import SendEmail from "../lib/nodemailer";
 export const forgotPasswordService = async (token: string, email: string) => {
   const resetLink = `http://localhost:5173/page/reset-password/${token}`;
 
-  console.log(token, email);
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,

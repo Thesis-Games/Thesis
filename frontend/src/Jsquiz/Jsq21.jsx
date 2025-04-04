@@ -18,33 +18,37 @@ const Jsq21 = () => {
         }}
       >
         <Jslayout>
-          <div className="w-full h-full flex flex-col  items-center justify-center font-mono">
+          <div className="w-full h-full flex flex-col items-center justify-center font-mono">
             <Jstittle title={"LEVEL 21"} />
 
-            <div className="w-full text-center   px-3">
+            <div className="w-full text-center px-3">
               <p className="text-lg text-[#414040]">
-              Click a button to make your rover move. Fill in the blank for the button name.
+                Click a button to make your rover move. Fill in the blank for
+                the button name.
+              </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> You need to reference the button's ID.
               </p>
             </div>
 
             {/* Code Block - Now Centered */}
             <div className="w-full flex justify-center items-center mt-10">
-              <div className="bg-[#222] rounded-md text-white text-sm   ">
+              <div className="bg-[#222] rounded-md text-white text-sm">
                 <pre className="whitespace-pre-wrap leading-relaxed px-1 py-10">
-                <code>
-  {"document.getElementById(\""}
-  <input
-    type="text"
-    placeholder=""
-    className="rounded-sm outline-none w-[120px] text-black px-1"
-    maxLength={15}
-  />
-  {"\").addEventListener(\"click\", function() {"}
-  <br />
-  {'  console.log("Rover moves on the Moon!");'}
-  <br />
-  {"});"}
-</code>
+                  <code>
+                    {'document.getElementById("'}
+                    <input
+                      type="text"
+                      placeholder="buttonID"
+                      className="rounded-sm outline-none w-[120px] text-black px-1"
+                      maxLength={15}
+                    />
+                    {'").addEventListener("click", function() {'}
+                    <br />
+                    {'  console.log("Rover moves on the Moon!");'}
+                    <br />
+                    {"});"}
+                  </code>
                 </pre>
               </div>
             </div>

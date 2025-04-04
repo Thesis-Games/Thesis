@@ -10,7 +10,7 @@ export const generateAcessToken = (id: string, email: string) => {
       aud: "thesisgame.app",
     },
     process.env.JWT_ACCESS_SECRET as string,
-    { expiresIn: "5m" }
+    { expiresIn: "1h" }
   );
 
   return accessToken;

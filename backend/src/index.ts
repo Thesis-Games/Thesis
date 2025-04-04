@@ -5,6 +5,9 @@ import connectDB from "./config/mongodb-connection";
 import cookieParser from "cookie-parser";
 import { errorHandler } from "./middleware/error-handler";
 import authenticationRouter from "./routes/authentication-route";
+import leaderBoardRoute from "./routes/leader-board-route";
+import questionHtmlRoute from "./routes/question-html-route";
+import levelRoute from "./routes/level-route";
 const app: Application = express();
 const PORT = 3000;
 app.use(
@@ -18,7 +21,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api", authenticationRouter);
-
+app.use("/api/leaderboard", leaderBoardRoute);
+app.use("/api/html", questionHtmlRoute);
+app.use("/api/level", levelRoute);
 app.use(errorHandler);
 
 connectDB().then(() => {

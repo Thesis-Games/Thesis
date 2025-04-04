@@ -48,11 +48,11 @@ const Recover = () => {
           {errors.email && (
             <p className="text-red-500">{errors.email.message}</p>
           )}
-          <div>
-            <ButtonRecovery handleSubmit={handleSubmit(onSubmit)} />
-          </div>
         </form>
       </FormLayoutComponent>
+      <div>
+        <ButtonRecovery handleSubmit={handleSubmit(onSubmit)} />
+      </div>
     </div>
   );
 };

@@ -26,6 +26,10 @@ const Jsq3 = () => {
                 You’re excited to land on the Moon! Fill in the blank to make a
                 function that says "Yay, I’m on the Moon!"
               </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> The function name should describe your
+                excitement about the Moon.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

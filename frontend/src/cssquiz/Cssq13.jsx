@@ -19,10 +19,14 @@ const Cssq13 = () => {
         <Csstitle title={"LEVEL 13"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-10  mt-5 ">
+          <div className="font-bold text-lg text-center px-10 mt-5">
             <p>
               Complete the missing code to create a shadow for the Mars Rover
               with a 15px offset, 30px blur, and 0.3 opacity.
+            </p>
+            <p className="text-sm text-gray-400">
+              Hint: Use the `box-shadow` property with the following format:
+              `offsetX offsetY blur radius color`.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
@@ -46,26 +50,26 @@ const Cssq13 = () => {
                   {"        box-shadow: "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 15px"
                     className="rounded-sm outline-none w-[30px] text-black px-1"
                     maxLength={5}
                   />{" "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 30px"
                     className="rounded-sm outline-none w-[30px] text-black px-1"
                     maxLength={5}
                   />{" "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 30px"
                     className="rounded-sm outline-none w-[30px] text-black px-1"
                     maxLength={5}
                   />
                   {" rgba(0, 0, 0, "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="e.g., 0.3"
                     className="rounded-sm outline-none w-[30px] text-black px-1"
                     maxLength={3}
                   />
@@ -90,7 +94,7 @@ const Cssq13 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

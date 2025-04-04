@@ -19,15 +19,19 @@ const Cssq17 = () => {
         <Csstitle title={"LEVEL 17"} />
 
         <div className="flex items-center justify-center flex-col relative space-y-2 font-mono">
-          <div className="font-bold text-lg text-center px-5  mt-2 ">
+          <div className="font-bold text-lg text-center px-5 mt-2">
             <p>
               Fill in the missing syntax to create a layout where an item spans
               across both columns.
             </p>
+            <p className="text-sm text-gray-400 mt-2">
+              <strong>Hint:</strong> Use <code>grid-column</code> with a value
+              that makes the item cover **both columns**.
+            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="px-6 py-1 text-[10px] mt-10 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
-              <pre className="whitespace-pre-wrap font-mono ">
+              <pre className="whitespace-pre-wrap font-mono">
                 <code>
                   {"<html>"}
                   <br />
@@ -58,7 +62,7 @@ const Cssq17 = () => {
                   {"        grid-column: span "}
                   <input
                     type="text"
-                    placeholder=""
+                    placeholder="2"
                     className="rounded-sm outline-none w-[50px] text-black px-1"
                     maxLength={2}
                   />
@@ -89,7 +93,7 @@ const Cssq17 = () => {
           </div>
         </div>
       </Csslayout>
-      <Cssbutton></Cssbutton>
+      <Cssbutton />
     </div>
   );
 };

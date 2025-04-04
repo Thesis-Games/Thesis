@@ -26,6 +26,10 @@ const Jsq9 = () => {
                 Make a fun message for your rover. Fill in the blank to add the
                 Moon spot.
               </p>
+              <p className="text-sm text-gray-400 mt-2">
+                <strong>Hint:</strong> Add the name of the Moon spot to complete
+                the message.
+              </p>
             </div>
 
             {/* Code Block - Now Centered */}

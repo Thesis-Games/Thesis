@@ -1,5 +1,4 @@
 import React from "react";
-import background from "../picture/background.png";
 import { FormLayoutComponent } from "./FormLayoutComponent";
 import TitleComponent from "./TitleComponent";
 import ButtonComponent from "./ButtonComponent";
@@ -8,6 +7,7 @@ import { signinFormSchema } from "../validation/signin-schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import SignInHook from "../hook/signin-hook";
+import background from "../picture/Front.gif";
 export default function Signin() {
   const { handleSignIn, loading } = SignInHook();
   const {
@@ -72,10 +72,10 @@ export default function Signin() {
             </div>
           </div>
         </Link>
-        <div>
-          <ButtonComponent handleSignIn={handleSubmit(onSubmit)} />
-        </div>
       </FormLayoutComponent>
+      <div>
+        <ButtonComponent handleSignIn={handleSubmit(onSubmit)} />
+      </div>
     </div>
   );
 }
