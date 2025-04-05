@@ -5,6 +5,7 @@ import Modal from "../component/custom-modal/modal-level";
 import LevelHook from "../hook/level-hook";
 import { getLevelPoints } from "../utils/get-level-point";
 import { renderStars } from "../utils/render-star";
+
 const Home = () => {
   const { handleGetLevel, level, levelModalData, handleGetLevelModal } =
     LevelHook();
@@ -57,16 +58,16 @@ const Home = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="gap-5 flex flex-wrap justify-center font-mono ">
+      <div className="gap-5 flex flex-wrap justify-center font-mono">
         {currentItems.map((sign, index) => {
           const points = getLevelPoints(sign.level, level);
           const isCompleted = points > 0;
           return (
             <div
               key={index}
-              className={`flex flex-col items-center justify-center text-black font-bold rounded-full w-20 h-20 hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff] ${
+              className={`flex flex-col items-center justify-center font-bold rounded-full w-20 h-20 hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff] ${
                 isCompleted
-                  ? "bg-yellow-400 hover:bg-yellow-300"
+                  ? "bg-[#ff3426] hover:bg-[#f34d41]"
                   : "bg-gray-400 hover:bg-gray-300"
               }`}
               style={{
@@ -77,11 +78,18 @@ const Home = () => {
               }}
               onClick={() => openModal(sign)}
             >
-              <h1 className="text-2xl">{sign.level}</h1>
-              {isCompleted && (
+              <h1
+                className={`text-2xl ${
+                  isCompleted ? "text-yellow-400" : "text-black"
+                }`}
+              >
+                {sign.level}
+              </h1>
+              {isCompleted ? (
                 <div className="text-xs mt-1">{renderStars(points)}</div>
+              ) : (
+                <div className="text-xs text-[#5f5d5d] mt-1">LOCKED</div>
               )}
-              {!isCompleted && <div className="text-xs mt-1">LOCKED</div>}
             </div>
           );
         })}
