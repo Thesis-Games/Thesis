@@ -24,10 +24,9 @@ const Cssq20 = () => {
               Fill in the missing syntax to reduce the size of the planet on
               screens smaller than 800px.
             </p>
-
             <p className="text-sm text-gray-400 mt-2">
-              <strong>Hint:</strong> Use <code>@media</code> with{" "}
-              <code>max-width</code> to target smaller screens.
+              <strong>Hint:</strong> Use smaller <code>width</code> and
+              <code>height</code> in the media query.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">

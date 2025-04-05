@@ -30,8 +30,8 @@ const Cssq21 = () => {
                   inside the container.
                 </p>
                 <p className="text-sm text-gray-400 mt-2">
-                  <strong>Hint:</strong> Use <code>overflow</code> with the
-                  value <code>hidden</code> to prevent content overflow.
+                  <strong>Hint:</strong> Use <code>overflow: hidden;</code> to
+                  cut off content that exceeds the container.
                 </p>
               </div>
               <div className="flex flex-col items-center justify-center">

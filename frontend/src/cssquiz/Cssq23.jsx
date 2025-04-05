@@ -25,9 +25,8 @@ const Cssq23 = () => {
               content-box.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              <strong>Hint:</strong> Use <code>box-sizing: content-box;</code>{" "}
-              to ensure that padding and border are not included in the
-              element's total width and height.
+              <strong>Hint:</strong> Use <code>box-sizing: content-box;</code>
+              to exclude padding and border.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
