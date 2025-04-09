@@ -163,6 +163,7 @@ import Jsq25 from "./Jsquiz/Jsq25";
 // Signup/Signin User
 import Signup from "./component/Signup";
 import Recover from "./component/Recover";
+import Musicsetting from "../src/musicsetting/Musicsetting";
 
 //html
 import HtmlQuestion from "./pages/html-question";
@@ -175,6 +176,7 @@ const App = () => {
           <Route path="/Signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/recover" element={<Recover />} />
+          <Route path="/musucsetting" element={<Musicsetting />} />
           <Route path="/page/reset-password/:id" element={<ResetPassword />} />
 
           <Route path="/home" element={<Homegame />} />

@@ -77,12 +77,12 @@ export default function Signin() {
 
         {/* Links */}
         <Link to="/recover">
-          <div className="text-[#1d1b1b] cursor-pointer font-bold hover:text-[#dbdbdb] mt-9 text-sm">
+          <div className="text-[#424242] cursor-pointer font-bold hover:text-[#0e0d0d] mt-10 text-sm">
             <p>Can't Sign In?</p>
           </div>
         </Link>
         <Link to="/Signup">
-          <div className="text-center text-[#1d1b1b] cursor-pointer font-bold hover:text-[#dbdbdb] mt-1 text-sm">
+          <div className="text-center text-[#424242] cursor-pointer font-bold hover:text-[#0e0d0d] mt-1 text-sm">
             <p>Create Account</p>
           </div>
         </Link>

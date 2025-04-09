@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import background from "../picture/starbg.gif";
 import MusicLayout from "./MusicLayout";
-import ribbon from "../picture/ribbon.png";
+
 import Musicbutton from "./Musicbutton";
 import * as Slider from "@radix-ui/react-slider"; // Ensure this is installed
 
@@ -20,57 +20,39 @@ const Musicsetting = () => {
     >
       <MusicLayout>
         {/* Ribbon with title */}
-        <div className="absolute top-[-130px] left-1/2 transform -translate-x-1/2">
-          <img
-            src={ribbon}
-            alt="Ribbon"
-            className="w-[455px] h-auto max-w-none"
-          />
-          <svg
-            width="450"
-            height="150"
-            className="absolute top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <path
-              id="curve"
-              d="M30,110 Q225,20 420,110"
-              fill="transparent"
-              stroke="transparent"
-            />
-            <text fontSize="40" fontWeight="bold" fill="#000">
-              <textPath href="#curve" startOffset="50%" textAnchor="middle">
-                Music Settings
-              </textPath>
-            </text>
-          </svg>
-        </div>
+        <div className="absolute top-[-130px] left-1/2 transform -translate-x-1/2"></div>
 
         {/* Music Settings */}
         <div className="w-full flex flex-col items-center relative">
           <div className="w-full text-center">
-            <h1 className="text-yellow-400  text-4xl font-bold">Music</h1>
+            <h1 className="text-yellow-400 text-4xl font-bold">Music</h1>
 
             {/* Sound Slider with Percentage */}
+            {/* Sound Slider with Percentage */}
             <div className="flex items-center justify-center mt-6 space-x-4 p-6">
-              {/* Slider */}
+              {/* Slider with Effects */}
               <Slider.Root
-                className="relative flex items-center w-[80%] h-8 mx-auto"
+                className="relative flex items-center w-[80%] h-8 mx-auto group"
                 defaultValue={[sound]}
                 max={100}
                 step={1}
                 onValueChange={(value) => setSound(value[0])}
               >
-                <Slider.Track className="bg-gray-500 relative flex-grow h-4 rounded-full">
-                  <Slider.Range className="absolute bg-yellow-400 h-full rounded-full" />
+                {/* Slider Track */}
+                <Slider.Track className="bg-gray-700 bg-opacity-40 backdrop-blur-sm relative flex-grow h-4 rounded-full transition-all duration-500 ease-in-out group-hover:shadow-[0_0_10px_#facc15]">
+                  {/* Slider Range with Glow Effect */}
+                  <Slider.Range className="absolute bg-yellow-400 h-full rounded-full transition-all duration-500 ease-in-out group-hover:shadow-[0_0_20px_#facc15] group-hover:bg-yellow-300" />
                 </Slider.Track>
+
+                {/* Slider Thumb with Hover, Drag and Pulse Effects */}
                 <Slider.Thumb
-                  className="block w-8 h-8 bg-yellow-400 rounded-full shadow-xl cursor-pointer"
+                  className="block w-8 h-8 bg-yellow-400 rounded-full shadow-xl cursor-pointer transition-transform duration-300 ease-out hover:scale-125 hover:shadow-[0_0_20px_#facc15] focus:outline-none focus:ring-4 focus:ring-yellow-300 animate-pulse"
                   aria-label="Sound Slider"
                 />
               </Slider.Root>
 
               {/* Percentage Display */}
-              <span className="text-white text-xl font-bold w-12">
+              <span className="text-yellow-400 text-xl font-bold w-12">
                 {sound}%
               </span>
             </div>

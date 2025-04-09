@@ -135,11 +135,6 @@ const Languagepick = () => {
         </Link>
       </div>
 
-      <div className=" absolute right-20 top-14">
-        <div className="text-yellow-300 font-bold text-3xl font-mono tracking-normal">
-          <h1>{profile?.email}</h1>
-        </div>
-      </div>
       <Link to="/home">
         <div className="absolute top-10 left-10 cursor-pointer">
           <svg
@@ -158,6 +153,23 @@ const Languagepick = () => {
               clip-rule="evenodd"
             />
           </svg>
+        </div>
+
+        <div
+          className=" absolute right-20 top-12 bg-[#ca1a1a] rounded-lg p-2"
+          style={{
+            boxShadow: `
+                  0 0 10px rgba(255, 255, 255, 0.8), 
+                  0 0 20px rgba(255, 255, 255, 0.6), 
+                  0 0 30px rgba(255, 255, 255, 0.4)
+                `,
+          }}
+        >
+          <div className=" bg-black rounded-lg p-2 ">
+            <div className="text-yellow-300 font-bold text-2xl font-mono tracking-normal">
+              <h1>{profile?.email}</h1>
+            </div>
+          </div>
         </div>
       </Link>
     </div>

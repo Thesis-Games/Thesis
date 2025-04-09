@@ -67,7 +67,7 @@ const Home = () => {
               key={index}
               className={`flex flex-col items-center justify-center font-bold rounded-full w-20 h-20 hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff] ${
                 isCompleted
-                  ? "bg-[#ff3426] hover:bg-[#f34d41]"
+                  ? "bg-[#ff2424] hover:bg-[#f34d41]"
                   : "bg-gray-400 hover:bg-gray-300"
               }`}
               style={{

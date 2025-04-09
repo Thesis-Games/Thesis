@@ -57,6 +57,23 @@ const Homegame = () => {
           </Link>
         </div>
 
+        <div className="flex justify-center items-center mt-10">
+          <Link to="/musicsetting">
+            <div
+              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+              style={{
+                boxShadow: `
+                  0 0 10px rgba(255, 255, 255, 0.8), 
+                  0 0 20px rgba(255, 255, 255, 0.6), 
+                  0 0 30px rgba(255, 255, 255, 0.4)
+                `,
+              }}
+            >
+              SETTINGS
+            </div>
+          </Link>
+        </div>
+
         {/* LOGOUT BUTTON */}
         <div className="flex justify-center items-center mt-10">
           <div

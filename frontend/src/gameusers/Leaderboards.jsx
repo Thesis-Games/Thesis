@@ -1,5 +1,5 @@
 import React from "react";
-import galaxy from "../picture/background.png";
+import background from "../picture/starbg.gif";
 import LeaderTitleComponent from "../component/LeaderTitleComponent";
 import ButtonLeaderboard from "../component/ButtonLeaderboard";
 import { Link } from "react-router-dom";
@@ -11,13 +11,23 @@ const Leaderboards = () => {
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col font-mono "
       style={{
-        backgroundImage: `url(${galaxy})`,
+        backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-yellow-300 p-6 rounded-lg relative max-w-lg w-full border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff  px-12 py-12">
+      <div
+        className="bg-yellow-300 p-6 rounded-lg relative max-w-lg w-full border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff  px-12 py-12"
+        style={{
+          border: "10px solid black", // Adds a 10px black border
+          boxShadow: `
+          0 0 10px rgba(255, 255, 255, 0.8), 
+          0 0 20px rgba(255, 255, 255, 0.6), 
+          0 0 30px rgba(255, 255, 255, 0.4)
+        `,
+        }}
+      >
         <LeaderTitleComponent title={"LEADERBOARDS"} />
 
         <div

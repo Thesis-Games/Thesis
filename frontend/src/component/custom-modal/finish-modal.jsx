@@ -47,7 +47,17 @@ const FinishModal = ({
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="relative bg-[#3eff7e] p-1 rounded-lg w-auto max-w-md mx-4">
+      <div
+        className="relative bg-[#3eff7e] p-1 rounded-lg w-auto max-w-md mx-4"
+        style={{
+          // Adds a 10px black border
+          boxShadow: `
+          0 0 10px rgba(255, 255, 255, 0.8), 
+          0 0 20px rgba(255, 255, 255, 0.6), 
+          0 0 30px rgba(255, 255, 255, 0.4)
+        `,
+        }}
+      >
         <div className="bg-[#050505] p-1 rounded-lg w-auto">
           <div className="bg-[#06dea8] rounded-lg w-auto flex flex-col items-center justify-center p-5">
             <div className="p-5">
