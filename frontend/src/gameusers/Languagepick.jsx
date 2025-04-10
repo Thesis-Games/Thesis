@@ -156,7 +156,7 @@ const Languagepick = () => {
         </div>
 
         <div
-          className=" absolute right-20 top-12 bg-[#ca1a1a] rounded-lg p-2"
+          className=" absolute right-20 top-12 bg-[#ee7f35] rounded-lg p-2"
           style={{
             boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 

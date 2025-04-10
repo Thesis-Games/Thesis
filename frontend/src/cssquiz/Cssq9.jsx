@@ -24,10 +24,6 @@ const Cssq9 = () => {
               Fill in the missing syntax to ensure the container clears the
               floated items.
             </p>
-            <p className="text-sm text-gray-400">
-              Hint: Use the `clear` property to clear the floated elements
-              inside the container.
-            </p>
           </div>
           <div className="flex flex-col items-center justify-center">
             <div className="px-6 py-4 text-[13px] mt-10 leading-relaxed text-[#ffffff] bg-[#222] rounded-md">
@@ -45,8 +41,11 @@ const Cssq9 = () => {
                   <input
                     type="text"
                     placeholder="e.g., ''"
-                    className="rounded-sm outline-none w-[80px] text-black px-1"
+                    className="rounded-sm outline-none w-[80px] text-black px-1 "
                     maxLength={10}
+                    onChange={handleAnswerChange}
+                    value={answerInput.answer1}
+                    name="answer1"
                   />
                   {";"}
                   <br />
@@ -54,8 +53,11 @@ const Cssq9 = () => {
                   <input
                     type="text"
                     placeholder="e.g., both"
-                    className="rounded-sm outline-none w-[80px] text-black px-1"
+                    className="rounded-sm outline-none w-[80px] text-black px-1 mt-1"
                     maxLength={10}
+                    onChange={handleAnswerChange}
+                    value={answerInput.answer2}
+                    name="answer2"
                   />
                   {";"}
                   <br />
@@ -63,8 +65,11 @@ const Cssq9 = () => {
                   <input
                     type="text"
                     placeholder="e.g., block"
-                    className="rounded-sm outline-none w-[80px] text-black px-1"
+                    className="rounded-sm outline-none w-[80px] text-black px-1 mt-1"
                     maxLength={10}
+                    onChange={handleAnswerChange}
+                    value={answerInput.answer3}
+                    name="answer3"
                   />
                   {";"}
                   <br />

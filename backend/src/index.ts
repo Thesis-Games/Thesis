@@ -9,6 +9,7 @@ import leaderBoardRoute from "./routes/leader-board-route";
 import questionHtmlRoute from "./routes/question-html-route";
 import levelRoute from "./routes/level-route";
 import questionCssRoute from "./routes/question-css-route";
+import questionJsRoute from "./routes/question-js-route";
 const app: Application = express();
 const PORT = 3000;
 app.use(
@@ -25,6 +26,7 @@ app.use("/api", authenticationRouter);
 app.use("/api/leaderboard", leaderBoardRoute);
 app.use("/api/html", questionHtmlRoute);
 app.use("/api/css", questionCssRoute);
+app.use("/api/js", questionJsRoute);
 
 app.use("/api/level", levelRoute);
 app.use(errorHandler);
