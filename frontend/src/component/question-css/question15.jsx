@@ -26,7 +26,10 @@ const Question15 = ({ data, handleAnswerChange, answerInput }) => {
                 type="text"
                 placeholder="flex-start"
                 className="rounded-sm outline-none w-[70px] text-black px-1"
-                maxLength={10}
+                maxLength={11}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
               />
               {";"}
               <br />
