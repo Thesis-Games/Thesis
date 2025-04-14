@@ -24,9 +24,9 @@ const Modal = ({ isOpen, onClose, level, title, data }) => {
       >
         {/* Nested layers for border effect */}
         <div className="bg-[#050505] p-1 rounded-lg w-auto">
-          <div className="bg-[#06dea8] rounded-lg w-auto p-5 flex flex-col items-center justify-center">
+          <div className="bg-[#06dea8] rounded-lg w-full p-5 flex flex-col items-center justify-center">
             <div className="p-5">
-              <h1 className="text-3xl font-tektur mb-5">
+              <h1 className="text-2xl font-tektur mb-5">
                 Do you want to play {level}?
               </h1>
               <StarRating points={data?.points || 0} />

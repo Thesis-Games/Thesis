@@ -10,36 +10,35 @@ const Question20 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {"async function roverJump() {"}
-                    <br />
-                    {"  let result = await new Promise(function("}
-                    <input
-                      type="text"
-                      placeholder="resolve"
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {") {"}
-                    <br />
-                    {"    setTimeout(function() {"}
-                    <br />
-                    {'      ok("Rover jumps on the Moon!");'}
-                    <br />
-                    {"    }, 2000);"}
-                    <br />
-                    {"  });"}
-                    <br />
-                    {"  console.log(result);"}
-                    <br />
-                    {"}"}
-                    <br />
-                    <br />
-                    {"roverJump();"}
-                  </code>
+            <code>
+              {"async function roverJump() {"}
+              <br />
+              {"  let result = await new Promise(function("}
+              <input
+                type="text"
+                placeholder="resolve"
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {") {"}
+              <br />
+              {"    setTimeout(function() {"}
+              <br />
+              {'      ok("Rover jumps on the Moon!");'}
+              <br />
+              {"    }, 2000);"}
+              <br />
+              {"  });"}
+              <br />
+              {"  console.log(result);"}
+              <br />
+              {"}"}
+              <br />
+              <br />
+              {"roverJump();"}
+            </code>
           </pre>
         </div>
       </div>

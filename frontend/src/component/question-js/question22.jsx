@@ -10,40 +10,39 @@ const Question22 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {'document.getElementById("'}
-                    <input
-                      type="text"
-                      placeholder="moveButton"
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {'").addEventListener("click", function() {'}
-                    <br />
-                    {'  console.log("Rover goes on the Moon!");'}
-                    <br />
-                    {"});"}
-                    <br />
-                    <br />
-                    {'document.getElementById("'}
-                    <input
-                      type="text"
-                      placeholder="stopButton"
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer2}
-                      name="answer2"
-                    />
-                    {'").addEventListener("click", function() {'}
-                    <br />
-                    {'  console.log("Rover stops on the Moon!");'}
-                    <br />
-                    {"});"}
-                  </code>
+            <code>
+              {'document.getElementById("'}
+              <input
+                type="text"
+                placeholder="moveButton"
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                maxLength={10}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {'").addEventListener("click", function() {'}
+              <br />
+              {'  console.log("Rover goes on the Moon!");'}
+              <br />
+              {"});"}
+              <br />
+              <br />
+              {'document.getElementById("'}
+              <input
+                type="text"
+                placeholder="stopButton"
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer2}
+                name="answer2"
+              />
+              {'").addEventListener("click", function() {'}
+              <br />
+              {'  console.log("Rover stops on the Moon!");'}
+              <br />
+              {"});"}
+            </code>
           </pre>
         </div>
       </div>

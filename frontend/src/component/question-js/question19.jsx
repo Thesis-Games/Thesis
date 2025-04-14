@@ -10,45 +10,44 @@ const Question19 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {"let landing = new Promise(function(ok, notOk) {"}
-                    <br />
-                    {"  let success = true;"}
-                    <br />
-                    <br />
-                    {"  if ("}
-                    <input
-                      type="text"
-                      placeholder="success"
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={15}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {") {"}
-                    <br />
-                    {'    ok("Rover landed safely on the Moon!");'}
-                    <br />
-                    {"  } else {"}
-                    <br />
-                    {'    notOk("Rover crashed!");'}
-                    <br />
-                    {"  }"}
-                    <br />
-                    {"});"}
-                    <br />
-                    <br />
-                    {"landing.then(function(message) {"}
-                    <br />
-                    {"  console.log(message);"}
-                    <br />
-                    {"}).catch(function(message) {"}
-                    <br />
-                    {"  console.log(message);"}
-                    <br />
-                    {"});"}
-                  </code>
+            <code>
+              {"let landing = new Promise(function(ok, notOk) {"}
+              <br />
+              {"  let success = true;"}
+              <br />
+              <br />
+              {"  if ("}
+              <input
+                type="text"
+                placeholder="success"
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {") {"}
+              <br />
+              {'    ok("Rover landed safely on the Moon!");'}
+              <br />
+              {"  } else {"}
+              <br />
+              {'    notOk("Rover crashed!");'}
+              <br />
+              {"  }"}
+              <br />
+              {"});"}
+              <br />
+              <br />
+              {"landing.then(function(message) {"}
+              <br />
+              {"  console.log(message);"}
+              <br />
+              {"}).catch(function(message) {"}
+              <br />
+              {"  console.log(message);"}
+              <br />
+              {"});"}
+            </code>
           </pre>
         </div>
       </div>

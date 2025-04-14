@@ -10,35 +10,34 @@ const Question18 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {"function landRover(rover, callback) {"}
-                    <br />
-                    {'  console.log("Landing " + rover + " on the Moon...");'}
-                    <br />
-                    {"  callback();"}
-                    <br />
-                    {"}"}
-                    <br />
-                    <br />
-                    {"function yay() {"}
-                    <br />
-                    {'  console.log("Yay, rover landed!");'}
-                    <br />
-                    {"}"}
-                    <br />
-                    <br />
-                    {'landRover("Zoomer", '}
-                    <input
-                      type="text"
-                      placeholder="callback"
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {");"}
-                  </code>
+            <code>
+              {"function landRover(rover, callback) {"}
+              <br />
+              {'  console.log("Landing " + rover + " on the Moon...");'}
+              <br />
+              {"  callback();"}
+              <br />
+              {"}"}
+              <br />
+              <br />
+              {"function yay() {"}
+              <br />
+              {'  console.log("Yay, rover landed!");'}
+              <br />
+              {"}"}
+              <br />
+              <br />
+              {'landRover("Zoomer", '}
+              <input
+                type="text"
+                placeholder="callback"
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {");"}
+            </code>
           </pre>
         </div>
       </div>

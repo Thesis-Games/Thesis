@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import background from "../picture/marsbg.gif";
-import Csslayout from "../csscomponent/Csslayout";
 import CssbtQ from "../csscomponent/CssbtnQ";
 import Csstitle from "../csscomponent/Csstitle";
-import { formatTime } from "../utils/time-formater";
 import FinishModal from "../component/custom-modal/finish-modal";
 import QuestionCssHook from "../hook/question-css-hook";
 import LayoutGame from "../gamelevelhtml/LayoutGame";
@@ -38,7 +36,7 @@ import Question24 from "../component/question-css/question24";
 import Question25 from "../component/question-css/question25";
 import { handleErrorAlert } from "../component/sweet-alert";
 import { useNavigate } from "react-router-dom";
-
+import TimerDisplay from "../utils/timer-display";
 export const CssQuestion = () => {
   const { category, level } = useParams();
   const { questionData, handleGetQuestion } = QuestionCssHook();
@@ -320,9 +318,7 @@ export const CssQuestion = () => {
         <Csstitle title={`LEVEL ${level}`} />
         {renderQuestion()}
 
-        <div className="absolute flex justify-center items-center top-5 right-6 gap-2">
-          <h1 className="text-xl font-bold">Timer: {formatTime(time)}</h1>
-        </div>
+        <TimerDisplay time={time} />
       </LayoutGame>
       <CssbtQ
         handleCorrectAnswer={handleCorrectAnswer}
