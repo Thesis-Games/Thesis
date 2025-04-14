@@ -7,6 +7,7 @@ import Csstitle from "../csscomponent/Csstitle";
 import { formatTime } from "../utils/time-formater";
 import FinishModal from "../component/custom-modal/finish-modal";
 import QuestionCssHook from "../hook/question-css-hook";
+import LayoutGame from "../gamelevelhtml/LayoutGame";
 
 // Import all question components
 
@@ -95,7 +96,6 @@ export const CssQuestion = () => {
       handleErrorAlert("Wrong Answer");
     }
   };
-
   const renderQuestion = () => {
     switch (Number(level)) {
       case 1:
@@ -304,7 +304,7 @@ export const CssQuestion = () => {
   };
 
   const handleNavigate = () => {
-    navigate("/languagepick/start");
+    navigate("/languagepick/csslevel");
   };
   return (
     <div
@@ -316,14 +316,14 @@ export const CssQuestion = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Csslayout>
+      <LayoutGame>
         <Csstitle title={`LEVEL ${level}`} />
         {renderQuestion()}
 
         <div className="absolute flex justify-center items-center top-5 right-6 gap-2">
           <h1 className="text-xl font-bold">Timer: {formatTime(time)}</h1>
         </div>
-      </Csslayout>
+      </LayoutGame>
       <CssbtQ
         handleCorrectAnswer={handleCorrectAnswer}
         handleExit={handleNavigate}

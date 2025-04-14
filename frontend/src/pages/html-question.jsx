@@ -71,7 +71,7 @@ const HtmlQuestion = () => {
       if (questionData[key]) {
         return answerInput[key].trim() === questionData[key];
       }
-      return true; // Ignore if questionData doesn't expect this answer
+      return true;
     });
 
     if (isCorrect) {

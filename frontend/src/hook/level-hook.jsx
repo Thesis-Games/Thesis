@@ -41,7 +41,13 @@ const LevelHook = () => {
       const response = await validateLevel(category, level);
 
       if (response.message === "Level validated successfully") {
-        navigate(`/questions/html/${category}/${level}`);
+        if (category == "HTML") {
+          navigate(`/questions/html/${category}/${level}`);
+        } else if (category == "CSS") {
+          navigate(`/questions/css/${category}/${level}`);
+        } else {
+          navigate(`/questions/js/${category}/${level}`);
+        }
       }
     } catch (error) {
       handleErrorAlert("Finish Previos Level");

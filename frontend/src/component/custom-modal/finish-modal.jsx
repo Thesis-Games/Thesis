@@ -39,7 +39,7 @@ const FinishModal = ({
         category === "HTML"
           ? "/languagepick/start"
           : category === "CSS"
-          ? "/leaderboard/css"
+          ? "/languagepick/csslevel"
           : "/leaderboard/js"
       );
     }
