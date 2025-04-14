@@ -36,7 +36,7 @@ export const getCssQuestionAndAnswer = async (category, level) => {
 export const getJsQuestionAndAnswer = async (category, level) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/Js/${category}/${level}`
+      `http://localhost:3000/api/js/${category}/${level}`
     );
     return response.data;
   } catch (error) {

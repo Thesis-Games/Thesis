@@ -304,7 +304,7 @@ export const CssQuestion = () => {
   };
 
   const handleNavigate = () => {
-    navigate("/languagepick/csslevel");
+    navigate("/languagepick/start");
   };
   return (
     <div

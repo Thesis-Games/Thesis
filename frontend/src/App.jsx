@@ -174,29 +174,33 @@ const App = () => {
     <>
       <BrowserRouter>
         <Routes>
+          {/* Authentication Routes */}
           <Route index element={<Signin />} />
-          <Route path="/Signin" element={<Signin />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/recover" element={<Recover />} />
-          <Route path="/musicsetting" element={<Musicsetting />} />
           <Route path="/page/reset-password/:id" element={<ResetPassword />} />
 
+          {/* Game Routes */}
           <Route path="/home" element={<Homegame />} />
           <Route path="/home/languagepick" element={<Languagepick />} />
           <Route path="/languagepick/start" element={<Home />} />
           <Route path="/languagepick/csslevel" element={<Csslevel />} />
           <Route path="/languagepick/jslevel" element={<Jslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/introduction" element={<Jslvl2 />} />
+          <Route path="/musicsetting" element={<Musicsetting />} />
 
-          <Route path="/starcomp" element={<Lossgame />} />
-          <Route path="/home" element={<Homegame />} />
-          <Route path="/home/language-pick" element={<Languagepick />} />
-          <Route path="/musicsetting" element={<Music />} />
-
-          {/* html route */}
+          {/* Question Routes */}
           <Route
             path="/questions/html/:category/:level"
+            element={<HtmlQuestion />}
+          />
+          <Route
+            path="/questions/css/:category/:level"
+            element={<CssQuestion />}
+          />
+          <Route
+            path="/questions/js/:category/:level"
             element={<JsQuestion />}
           />
         </Routes>
