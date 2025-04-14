@@ -14,7 +14,7 @@ const Question14 = ({ data, handleAnswerChange, answerInput }) => {
           &lt;form action="
           <input
             type="text"
-            className="rounded-sm outline-none w-[120px] text-black mx-1"
+            className="rounded-sm outline-none w-[95px] text-black mx-1"
             onChange={handleAnswerChange}
             value={answerInput.answer1}
             name="answer1"
@@ -23,7 +23,7 @@ const Question14 = ({ data, handleAnswerChange, answerInput }) => {
           &nbsp;&nbsp;&lt;input type="text" name="
           <input
             type="text"
-            className="rounded-sm outline-none w-[120px] text-black mx-1 mt-2"
+            className="rounded-sm outline-none w-[100px] text-black mx-1 mt-2"
             onChange={handleAnswerChange}
             value={answerInput.answer2}
             name="answer2"

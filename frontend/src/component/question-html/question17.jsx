@@ -14,7 +14,7 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
   <meta `}
           <input
             type="text"
-            className="rounded-sm outline-none w-[60px] text-black px-1 mx-1"
+            className="rounded-sm outline-none w-[70px] text-black px-1 mx-1"
             maxLength={8}
             onChange={handleAnswerChange}
             value={answerInput.answer1}
@@ -33,7 +33,7 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
           {`="description" content="`}
           <input
             type="text"
-            className="rounded-sm outline-none w-[120px] text-black px-1 mx-1"
+            className="rounded-sm outline-none w-[120px] text-black px-1 mx-1 mt-1"
             maxLength={20}
             onChange={handleAnswerChange}
             value={answerInput.answer3}

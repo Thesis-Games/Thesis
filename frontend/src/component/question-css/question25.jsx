@@ -8,7 +8,7 @@ const Question25 = ({ data, handleAnswerChange, answerInput }) => {
       </div>
 
       <div className="w-full h-full flex items-center justify-center">
-        <div className="text-[#ffffff] bg-[#222] px-5 py-4 rounded-md ">
+        <div className="text-[#ffffff] bg-[#222] px-5 py-4 rounded-md w-full">
           <pre className="whitespace-pre-wrap font-mono text-sm">
             <code>
               {"<html>"} <br />
