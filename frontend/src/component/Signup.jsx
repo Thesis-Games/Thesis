@@ -7,8 +7,9 @@ import { signupFormSchema } from "../validation/signup-schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import SignUpHook from "../hook/signup-hook";
+import { handleErrorAlert } from "./sweet-alert";
 const Signup = () => {
-  const { handleSignup, loading } = SignUpHook();
+  const { handleSignup } = SignUpHook();
 
   const {
     register,
@@ -19,6 +20,10 @@ const Signup = () => {
   });
 
   const onSubmit = (data) => {
+    if (data.password !== data.confirmpassword) {
+      handleErrorAlert("Password not match");
+      return;
+    }
     handleSignup(data);
   };
   return (
@@ -64,6 +69,16 @@ const Signup = () => {
           />
           {errors.password && (
             <p className="text-red-500">{errors.password.message}</p>
+          )}
+
+          <input
+            {...register("confirmpassword")}
+            placeholder="Confirm Password"
+            type="password"
+            className="p-3 rounded-full bg-black text-white text-center font-bold w-[90%] tracking-wide  text-xl border-2 border-[#ffffff] shadow-lg shadow-[#ffffff] focus:outline-none focus:ring-2 focus:ring-[#00e5ff"
+          />
+          {errors.confirmpassword && (
+            <p className="text-red-500">{errors.confirmpassword.message}</p>
           )}
         </form>
       </FormLayoutComponent>

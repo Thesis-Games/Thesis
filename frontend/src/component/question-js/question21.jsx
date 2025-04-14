@@ -10,23 +10,22 @@ const Question21 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {'document.getElementById("'}
-                    <input
-                      type="text"
-                      placeholder="buttonID"
-                      className="rounded-sm outline-none w-[120px] text-black px-1"
-                      maxLength={15}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {'").addEventListener("click", function() {'}
-                    <br />
-                    {'  console.log("Rover moves on the Moon!");'}
-                    <br />
-                    {"});"}
-                  </code>
+            <code>
+              {'document.getElementById("'}
+              <input
+                type="text"
+                placeholder="buttonID"
+                className="rounded-sm outline-none w-[120px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {'").addEventListener("click", function() {'}
+              <br />
+              {'  console.log("Rover moves on the Moon!");'}
+              <br />
+              {"});"}
+            </code>
           </pre>
         </div>
       </div>

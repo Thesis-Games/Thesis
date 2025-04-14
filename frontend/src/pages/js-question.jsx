@@ -1,23 +1,17 @@
 import { useState, useEffect, Suspense, lazy } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import background from "../picture/moonbg.gif";
-import Jslayout from "../Jscomponent/Jslayout";
 import Jstittle from "../Jscomponent/Jstittle";
 import Jsbutton from "../Jscomponent/Jsbutton";
-import { formatTime } from "../utils/time-formater";
+import TimerDisplay from "../utils/timer-display";
 import FinishModal from "../component/custom-modal/finish-modal";
 import QuestionJsHook from "../hook/question-js-hook";
 import { handleErrorAlert } from "../component/sweet-alert";
+import LayoutGame from "../gamelevelhtml/LayoutGame";
 
 // Map level to question components
 const questionComponents = Array.from({ length: 25 }, (_, i) =>
   lazy(() => import(`../component/question-js/question${i + 1}`))
-);
-
-const TimerDisplay = ({ time }) => (
-  <div className="absolute flex justify-center items-center top-5 right-6 gap-2">
-    <h1 className="text-xl font-bold">Timer: {formatTime(time)}</h1>
-  </div>
 );
 
 export const JsQuestion = () => {
@@ -36,8 +30,10 @@ export const JsQuestion = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    handleGetQuestion(category, level);
-  }, [category, level, handleGetQuestion]);
+    if (category && level) {
+      handleGetQuestion(category, level);
+    }
+  }, [category, level]);
 
   useEffect(() => {
     if (!isRunning) return;
@@ -65,7 +61,7 @@ export const JsQuestion = () => {
       if (questionData[key]) {
         return answerInput[key].trim() === questionData[key];
       }
-      return true; // Ignore if questionData doesn't expect this answer
+      return true;
     });
 
     if (isCorrect) {
@@ -77,7 +73,7 @@ export const JsQuestion = () => {
   };
 
   const handleNavigate = () => {
-    navigate("/languagepick/start");
+    navigate("/languagepick/jslevel");
   };
 
   const renderQuestion = () => {
@@ -112,11 +108,11 @@ export const JsQuestion = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Jslayout>
+      <LayoutGame>
         <Jstittle title={`LEVEL ${level}`} />
         {renderQuestion()}
         <TimerDisplay time={time} />
-      </Jslayout>
+      </LayoutGame>
       <Jsbutton
         handleCorrectAnswer={handleCorrectAnswer}
         handleExit={handleNavigate}

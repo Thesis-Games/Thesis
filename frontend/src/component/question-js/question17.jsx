@@ -10,32 +10,31 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {"let moonRover = {"}
-                    <br />
-                    {'  name: "Zoomer",'}
-                    <br />
-                    {"  "}
-                    <input
-                      type="text"
-                      placeholder=""
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {": function() {"}
-                    <br />
-                    {'    console.log(this.name + " rolls fast on the Moon!");'}
-                    <br />
-                    {"  }"}
-                    <br />
-                    {"};"}
-                    <br />
-                    <br />
-                    {"moonRover.roll();"}
-                  </code>
+            <code>
+              {"let moonRover = {"}
+              <br />
+              {'  name: "Zoomer",'}
+              <br />
+              {"  "}
+              <input
+                type="text"
+                placeholder=""
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {": function() {"}
+              <br />
+              {'    console.log(this.name + " rolls fast on the Moon!");'}
+              <br />
+              {"  }"}
+              <br />
+              {"};"}
+              <br />
+              <br />
+              {"moonRover.roll();"}
+            </code>
           </pre>
         </div>
       </div>

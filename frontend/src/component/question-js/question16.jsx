@@ -10,23 +10,22 @@ const Question16 = ({ data, handleAnswerChange, answerInput }) => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="text-[#ffffff] bg-[#222] p-5 rounded-md mt-5">
           <pre className="whitespace-pre-wrap font-mono text-sm">
-          <code>
-                    {'let moonPlaces = ["Big Crater", "Quiet Spot"];'}
-                    <br />
-                    {"moonPlaces."}
-                    <input
-                      type="text"
-                      placeholder=""
-                      className="rounded-sm outline-none w-[85px] text-black px-1"
-                      maxLength={10}
-                      onChange={handleAnswerChange}
-                      value={answerInput.answer1}
-                      name="answer1"
-                    />
-                    {'("Shiny Rocks");'}
-                    <br />
-                    {"console.log(moonPlaces);"}
-                  </code>
+            <code>
+              {'let moonPlaces = ["Big Crater", "Quiet Spot"];'}
+              <br />
+              {"moonPlaces."}
+              <input
+                type="text"
+                placeholder=""
+                className="rounded-sm outline-none w-[85px] text-black px-1"
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
+              />
+              {'("Shiny Rocks");'}
+              <br />
+              {"console.log(moonPlaces);"}
+            </code>
           </pre>
         </div>
       </div>

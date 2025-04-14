@@ -40,7 +40,7 @@ const FinishModal = ({
           ? "/languagepick/start"
           : category === "CSS"
           ? "/languagepick/csslevel"
-          : "/leaderboard/js"
+          : "/languagepick/jslevel"
       );
     }
   };

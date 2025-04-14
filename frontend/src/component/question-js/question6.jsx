@@ -19,7 +19,9 @@ const Question6 = ({ data, handleAnswerChange, answerInput }) => {
                 type="text"
                 placeholder=" "
                 className="rounded-sm outline-none w-[85px] text-black px-1"
-                maxLength={8}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
               />
               {'[1]); // Shows "Quiet Spot"'}
               <br />

@@ -6,8 +6,8 @@ import TitleHTML from "../gamelevelhtml/TitleHTML";
 import Questionbutton from "../QuestionGame/Questionbutton";
 import FinishModal from "../component/custom-modal/finish-modal";
 import QuestionHtmlHook from "../hook/question-html-hook";
-import { formatTime } from "../utils/time-formater";
 import { handleErrorAlert } from "../component/sweet-alert";
+import TimerDisplay from "../utils/timer-display";
 
 // Map level to question components, handling inconsistent file naming
 const questionComponents = Array.from({ length: 25 }, (_, i) => {
@@ -19,12 +19,6 @@ const questionComponents = Array.from({ length: 25 }, (_, i) => {
       : `question${level}`;
   return lazy(() => import(`../component/question-html/${fileName}`));
 });
-
-const TimerDisplay = ({ time }) => (
-  <div className="absolute flex justify-center items-center top-5 right-6 gap-2">
-    <h1 className="text-xl font-bold">Timer: {formatTime(time)}</h1>
-  </div>
-);
 
 const HtmlQuestion = () => {
   const { category, level } = useParams();
