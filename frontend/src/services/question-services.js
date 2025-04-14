@@ -21,3 +21,25 @@ export const getHtmlQuestionAndAnswer = async (category, level) => {
     throw error;
   }
 };
+
+export const getCssQuestionAndAnswer = async (category, level) => {
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/api/css/${category}/${level}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getJsQuestionAndAnswer = async (category, level) => {
+  try {
+    const response = await axios.get(
+      `http://localhost:3000/api/Js/${category}/${level}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

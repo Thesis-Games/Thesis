@@ -25,8 +25,8 @@ const Cssq25 = () => {
               and color of the spaceship.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              <strong>Hint:</strong> Use <code>var()</code> to reference the CSS
-              variables you've declared in the <code>:root</code> block.
+              <strong>Hint:</strong> Use <code>var()</code> to apply values from{" "}
+              <code>:root</code> variables.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">

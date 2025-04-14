@@ -1,5 +1,5 @@
 import React from "react";
-import background from "../picture/background.png";
+import background from "../picture/front.gif";
 import { FormLayoutComponent } from "./FormLayoutComponent";
 import TitleComponent from "./TitleComponent";
 import { useForm } from "react-hook-form";

@@ -25,9 +25,8 @@ const Cssq24 = () => {
               scaling.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              <strong>Hint:</strong> To transition both properties, specify the{" "}
-              <code>transition</code> property with both values. Remember to use{" "}
-              <code>scale</code> for the scaling effect.
+              <strong>Hint:</strong> Use <code>transition</code> with both{" "}
+              <code>background-color</code> and <code>transform</code>.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">

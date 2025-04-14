@@ -4,7 +4,7 @@ const MusicLayout = ({ children }) => {
   return (
     <div className="relative flex items-center justify-center">
       <div
-        className="bg-[#FD700A] rounded-lg shadow-lg w-[350px] h-[350px] flex items-center justify-center relative"
+        className="bg-[#3eff7e] rounded-lg shadow-lg w-[550px] h-[250px] flex items-center justify-center relative"
         style={{
           boxShadow: `
               0 0 10px rgba(255, 255, 255, 0.8), 
@@ -15,7 +15,7 @@ const MusicLayout = ({ children }) => {
       >
         {/* Sobrang laki ng Ribbon, pero nasa tamang position */}
 
-        <div className="bg-[#050505] rounded-lg shadow-lg w-[325px] h-[325px] flex items-center justify-center">
+        <div className="bg-[#050505] rounded-lg shadow-lg w-[525px] h-[225px] flex items-center justify-center">
           {children}
         </div>
       </div>

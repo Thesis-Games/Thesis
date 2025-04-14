@@ -25,9 +25,8 @@ const Cssq22 = () => {
               planet.
             </p>
             <p className="text-sm text-gray-400 mt-2">
-              <strong>Hint:</strong> Use <code>z-index</code> to layer the
-              spaceship behind the planet. Make sure the planet has a higher
-              value than the spaceship.
+              <strong>Hint:</strong> Use <code>z-index</code> to put the ship
+              behind the planet.
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
