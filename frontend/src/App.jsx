@@ -168,6 +168,7 @@ import Musicsetting from "../src/musicsetting/Musicsetting";
 //html
 import HtmlQuestion from "./pages/html-question";
 import CssQuestion from "./pages/css-question";
+import JsQuestion from "./pages/js-question";
 const App = () => {
   return (
     <>
@@ -196,7 +197,7 @@ const App = () => {
           {/* html route */}
           <Route
             path="/questions/html/:category/:level"
-            element={<CssQuestion />}
+            element={<JsQuestion />}
           />
         </Routes>
       </BrowserRouter>
