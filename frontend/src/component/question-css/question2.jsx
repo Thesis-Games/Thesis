@@ -22,9 +22,12 @@ const Question2 = ({ data, handleAnswerChange, answerInput }) => {
               {"        font-size: "}
               <input
                 type="text"
-                placeholder="e.g., 40px"
+                placeholder="40px"
                 className="rounded-sm outline-none w-[40px] text-black px-1"
                 maxLength={5}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
               />
               {";"}
               <br />
@@ -34,6 +37,9 @@ const Question2 = ({ data, handleAnswerChange, answerInput }) => {
                 placeholder="e.g., Verdana"
                 className="rounded-sm outline-none w-[65px] text-black px-1 mt-2"
                 maxLength={8}
+                onChange={handleAnswerChange}
+                value={answerInput.answer2}
+                name="answer2"
               />
               {";"}
               <br />

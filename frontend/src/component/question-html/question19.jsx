@@ -27,7 +27,7 @@ h1 {
   color: `}
               <input
                 type="text"
-                className="rounded-sm outline-none w-[100px] text-black px-1 mx-1"
+                className="rounded-sm outline-none w-[100px] text-black px-1 mx-1 mt-1"
                 onChange={handleAnswerChange}
                 value={answerInput.answer2}
                 name="answer2"

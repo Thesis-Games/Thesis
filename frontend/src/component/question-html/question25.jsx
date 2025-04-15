@@ -17,7 +17,7 @@ const Question25 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;label for="
             <input
               type="text"
-              className="rounded-sm outline-none w-[80px] text-black mx-1 mt-2"
+              className="rounded-sm outline-none w-[40px] text-black mx-1 mt-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer1}
@@ -29,7 +29,7 @@ const Question25 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;input type="
             <input
               type="text"
-              className="rounded-sm outline-none w-[80px] text-black mx-1 mt-2"
+              className="rounded-sm outline-none w-[65px] text-black mx-1 mt-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer2}
@@ -41,7 +41,7 @@ const Question25 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;input type="submit" value="
             <input
               type="text"
-              className="rounded-sm outline-none w-[80px] text-black mx-1 mt-2 mb-2"
+              className="rounded-sm outline-none w-[60px] text-black mx-1 mt-2 mb-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer3}

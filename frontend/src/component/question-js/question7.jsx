@@ -23,7 +23,7 @@ const Question7 = ({ data, handleAnswerChange, answerInput }) => {
               {"console.log(moonRover."}
               <input
                 type="text"
-                placeholder="property"
+                placeholder=""
                 className="rounded-sm outline-none w-[100px] text-black px-1"
                 onChange={handleAnswerChange}
                 value={answerInput.answer1}

@@ -15,7 +15,7 @@ const Question24 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;meta name="
             <input
               type="text"
-              className="rounded-sm outline-none w-[120px] text-black mx-1 mt-2"
+              className="rounded-sm outline-none w-[90px] text-black mx-1 mt-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer1}
@@ -27,7 +27,7 @@ const Question24 = ({ data, handleAnswerChange, answerInput }) => {
             &lt;meta name="
             <input
               type="text"
-              className="rounded-sm outline-none w-[120px] text-black mx-1 mt-2"
+              className="rounded-sm outline-none w-[90px] text-black mx-1 mt-2"
               placeholder=""
               onChange={handleAnswerChange}
               value={answerInput.answer2}
