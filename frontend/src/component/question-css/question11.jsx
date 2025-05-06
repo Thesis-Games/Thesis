@@ -30,7 +30,10 @@ const Question11 = ({ data, handleAnswerChange, answerInput }) => {
                 type="text"
                 placeholder="e.g., background-color 0.5s"
                 className="rounded-sm outline-none w-[130px] text-black px-1"
-                maxLength={16}
+                maxLength={21}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
               />
               {";"}
               <br />
@@ -44,6 +47,9 @@ const Question11 = ({ data, handleAnswerChange, answerInput }) => {
                 placeholder="red"
                 className="rounded-sm outline-none w-[30px] text-black px-1"
                 maxLength={3}
+                onChange={handleAnswerChange}
+                value={answerInput.answer2}
+                name="answer2"
               />
               {";"}
               <br />

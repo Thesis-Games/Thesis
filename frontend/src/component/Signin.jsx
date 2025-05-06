@@ -64,7 +64,7 @@ export default function Signin() {
             />
             <button
               type="button"
-              onClick={() => setShowPassword((prev) => !prev)} // 👈 Toggle
+              onClick={() => setShowPassword((prev) => !prev)} //
               className="absolute right-5 top-1/2 transform -translate-y-1/2 text-white font-bold text-sm"
             >
               {showPassword ? "Hide" : "Show"}
@@ -77,7 +77,7 @@ export default function Signin() {
 
         {/* Links */}
         <Link to="/recover">
-          <div className="text-[#424242] cursor-pointer font-bold hover:text-[#0e0d0d] mt-10 text-sm">
+          <div className="text-[#424242] cursor-pointer font-bold hover:text-[#0e0d0d] mt-20 text-sm">
             <p>Can't Sign In?</p>
           </div>
         </Link>

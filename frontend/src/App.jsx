@@ -169,6 +169,7 @@ import Musicsetting from "../src/musicsetting/Musicsetting";
 import HtmlQuestion from "./pages/html-question";
 import CssQuestion from "./pages/css-question";
 import JsQuestion from "./pages/js-question";
+import Lessonpage from "./pages/lesson-page";
 const App = () => {
   return (
     <>
@@ -189,6 +190,7 @@ const App = () => {
           <Route path="/languagepick/jslevel" element={<Jslevel />} />
           <Route path="/leaderboard" element={<Leaderboards />} />
           <Route path="/musicsetting" element={<Musicsetting />} />
+          <Route path="/lesson" element={<Lessonpage />} />
 
           {/* Question Routes */}
           <Route

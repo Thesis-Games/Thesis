@@ -32,7 +32,7 @@ const Question22 = ({ data, handleAnswerChange, answerInput }) => {
                 type="text"
                 placeholder=""
                 className="rounded-sm outline-none w-[40px] text-black px-1"
-                maxLength={5}
+                maxLength={15}
                 onChange={handleAnswerChange}
                 value={answerInput.answer1}
                 name="answer1"

@@ -1,51 +1,56 @@
 import React, { useRef, useState, useEffect } from "react";
-import bgmusic from "../../public/energetic-chiptune-video-game-music-platformer-8-bit-318348.mp3";
+import bgmusic from "../assets/backgroundmusic.mp3";
 
 const LayoutGame = ({ children }) => {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(
+    () => localStorage.getItem("isMusicPlaying") !== "false"
+  );
 
   useEffect(() => {
-    // Try to play audio when component mounts
-    const playAudio = async () => {
+    const handleAudio = async () => {
+      if (!audioRef.current) return;
+
       try {
-        if (audioRef.current) {
+        if (isPlaying) {
+          audioRef.current.currentTime = 0;
           await audioRef.current.play();
-          setIsPlaying(true);
+        } else {
+          audioRef.current.pause();
         }
       } catch (err) {
-        console.log("Autoplay was prevented:", err);
-        setIsPlaying(false);
+        console.error("Audio playback error:", err);
       }
     };
 
-    playAudio();
-  }, []);
+    handleAudio();
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+    };
+  }, [isPlaying]);
 
   const toggleMusic = () => {
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-
-    setIsPlaying(!isPlaying);
+    const newState = !isPlaying;
+    setIsPlaying(newState);
+    localStorage.setItem("isMusicPlaying", newState.toString());
   };
 
   return (
     <div className="relative">
-      {/* Audio element with autoPlay */}
-      <audio ref={audioRef} loop autoPlay>
+      <audio ref={audioRef} loop>
         <source src={bgmusic} type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
 
-      {/* Music Toggle Button */}
       <div className="absolute flex justify-center items-center top-5 left-6 gap-2 z-10">
         <button
           onClick={toggleMusic}
           className="text-black hover:scale-110 transition duration-300"
+          aria-label={isPlaying ? "Mute music" : "Unmute music"}
         >
           {isPlaying ? (
             <svg

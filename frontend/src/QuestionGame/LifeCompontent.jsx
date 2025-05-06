@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import life from "../picture/life.png";
 export const LifeCompontent = () => {
   return (

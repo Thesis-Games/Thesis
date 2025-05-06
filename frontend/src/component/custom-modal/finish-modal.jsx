@@ -17,7 +17,7 @@ const FinishModal = ({
 }) => {
   const { handleCreateLeaderBoardAndLevelPoints, loading } = LeaderBoardHook();
   const navigate = useNavigate();
-
+  const continueNavigate = Number(level) + 1;
   useEffect(() => {
     if (finishModalOpen) {
       const audio = new Audio(victorySound);
@@ -35,22 +35,31 @@ const FinishModal = ({
     );
     if (response) {
       setFinishModalOpen(false);
+
       navigate(
         category === "HTML"
-          ? "/languagepick/start"
+          ? `/questions/html/HTML/${continueNavigate}`
           : category === "CSS"
-          ? "/languagepick/csslevel"
-          : "/languagepick/jslevel"
+          ? `/questions/css/CSS/${continueNavigate}`
+          : `/questions/js/JS/${continueNavigate}`
       );
     }
   };
 
+  const handleExist = () => {
+    navigate(
+      category === "HTML"
+        ? "/languagepick/start"
+        : category === "CSS"
+        ? "/languagepick/csslevel"
+        : "/languagepick/jslevel"
+    );
+  };
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div
-        className="relative bg-[#3eff7e] p-1 rounded-lg w-auto max-w-md mx-4"
+        className="relative bg-[#3eff7e] p-1 rounded-lg w-[50%] max-w-md mx-4"
         style={{
-          // Adds a 10px black border
           boxShadow: `
           0 0 10px rgba(255, 255, 255, 0.8), 
           0 0 20px rgba(255, 255, 255, 0.6), 
@@ -72,15 +81,32 @@ const FinishModal = ({
           </div>
         </div>
         <ModalTitle title={"Victory"} />
-        <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 ">
-          <button
-            className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
-            disabled={loading}
-            onClick={handleSuccess}
-          >
-            {loading ? "Loading..." : "Play Again"}
-          </button>
-        </div>
+        {level == "25" ? (
+          <div className="absolute -bottom-5 left-1/3 transform -translate-x-1/2 ">
+            <button
+              className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
+              onClick={handleExist}
+            >
+              Exit
+            </button>
+          </div>
+        ) : (
+          <div className="flex justify-between items-center w-full px-10 mt-4 absolute -bottom-6 left-1/2 transform -translate-x-1/2">
+            <button
+              className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
+              disabled={loading}
+              onClick={handleSuccess}
+            >
+              {loading ? "Loading..." : "Continue"}
+            </button>
+            <button
+              className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
+              onClick={handleExist}
+            >
+              Exit
+            </button>
+          </div>
+        )}
       </div>
       <ConfettiExplosion particleCount={200} duration={3000} zIndex={100} />
     </div>
