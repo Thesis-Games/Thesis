@@ -31,8 +31,8 @@ const Question22 = ({ data, handleAnswerChange, answerInput }) => {
               <input
                 type="text"
                 placeholder=""
-                className="rounded-sm outline-none w-[40px] text-black px-1"
-                maxLength={5}
+                className="rounded-sm outline-none w-[70px] text-black px-1"
+                maxLength={10}
                 onChange={handleAnswerChange}
                 value={answerInput.answer1}
                 name="answer1"

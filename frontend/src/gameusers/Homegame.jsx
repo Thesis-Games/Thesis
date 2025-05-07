@@ -6,7 +6,7 @@ const Homegame = () => {
   const { logout } = LogoutHook();
   return (
     <div
-      className="w-full h-screen relative flex items-center justify-center flex-col"
+      className="w-full min-h-screen relative flex flex-col items-center justify-center"
       style={{
         backgroundImage: `url(${background})`,
         backgroundSize: "cover",
@@ -15,7 +15,10 @@ const Homegame = () => {
       }}
     >
       <div className="text-white flex justify-center items-center flex-col font-mono">
-        <div className="font-bold text-9xl tracking-wide border-black">
+        <div
+          className="font-bold text-9xl tracking-wide border-black 
+        max-xl:text-9xl max-lg:text-8xl max-md:text-7xl max-sm:text-6xl "
+        >
           <h1>
             <span style={{ color: "yellow" }}>T</span>ECHTALES
           </h1>
@@ -25,7 +28,10 @@ const Homegame = () => {
         <div className="flex justify-center items-center mt-10">
           <Link to="/home/languagepick">
             <div
-              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]
+                  max-xl:w-[200px] max-lg:w-[180px] max-md:w-[160px] max-sm:w-[140px]
+              max-xl:h-[70px] max-lg:h-[60px] max-md:h-[50px] max-sm:h-[40px]
+               max-xl:text-xl max-lg:text-lg max-md:text-md max-sm:text-sm"
               style={{
                 boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
@@ -43,7 +49,11 @@ const Homegame = () => {
         <div className="flex justify-center items-center mt-10">
           <Link to="/leaderboard">
             <div
-              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]
+              
+              max-xl:w-[200px] max-lg:w-[180px] max-md:w-[160px] max-sm:w-[140px]
+              max-xl:h-[70px] max-lg:h-[60px] max-md:h-[50px] max-sm:h-[40px]
+               max-xl:text-xl max-lg:text-lg max-md:text-md max-sm:text-sm"
               style={{
                 boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
@@ -60,7 +70,10 @@ const Homegame = () => {
         <div className="flex justify-center items-center mt-10">
           <Link to="/musicsetting">
             <div
-              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+              className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]
+                max-xl:w-[200px] max-lg:w-[180px] max-md:w-[160px] max-sm:w-[140px]
+              max-xl:h-[70px] max-lg:h-[60px] max-md:h-[50px] max-sm:h-[40px]
+               max-xl:text-xl max-lg:text-lg max-md:text-md max-sm:text-sm"
               style={{
                 boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
@@ -78,7 +91,10 @@ const Homegame = () => {
         <div className="flex justify-center items-center mt-10">
           <div
             onClick={logout}
-            className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+            className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]
+              max-xl:w-[200px] max-lg:w-[180px] max-md:w-[160px] max-sm:w-[140px]
+              max-xl:h-[70px] max-lg:h-[60px] max-md:h-[50px] max-sm:h-[40px]
+              max-xl:text-xl max-lg:text-lg max-md:text-md max-sm:text-sm"
             style={{
               boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 

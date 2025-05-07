@@ -28,24 +28,24 @@ const Question10 = ({ data, handleAnswerChange, answerInput }) => {
               {"        transition: "}
               <input
                 type="text"
-                placeholder="e.g., width"
-                className="rounded-sm outline-none w-[80px] text-black px-1"
-                maxLength={15}
+                placeholder=""
+                className="rounded-sm outline-none w-[50px] text-black px-1"
+                maxLength={5}
+                onChange={handleAnswerChange}
+                value={answerInput.answer1}
+                name="answer1"
               />
-              {" 0.5s;"}
+              {";"}
               <br />
               {"      }"}
               <br />
               {"      .button:hover {"}
               <br />
-              {"        background-color: "}
-              <input
-                type="text"
-                placeholder="e.g., red"
-                className="rounded-sm outline-none w-[80px] text-black px-1"
-                maxLength={15}
-              />
+              {"        background-color: red"}
+
               {";"}
+              <br />
+              {"        width: 200px;"}
               <br />
               {"      }"}
               <br />
