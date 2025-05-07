@@ -8,7 +8,7 @@ const ForgotPasswordHook = () => {
     setLoading(true);
     try {
       const data = await forgotPasswordService(email);
-      handleSuccessAlert("Successfully signed in!");
+      handleSuccessAlert("Email sent successfully!");
       return data;
     } catch (error) {
       handleErrorAlert(error.response.data.error);

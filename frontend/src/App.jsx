@@ -170,6 +170,9 @@ import HtmlQuestion from "./pages/html-question";
 import CssQuestion from "./pages/css-question";
 import JsQuestion from "./pages/js-question";
 import Lessonpage from "./pages/lesson-page";
+import VerifyAccount from "./pages/verify-account-verify";
+import SettingsPage from "./pages/setting";
+import ProtectedRoute from "./component/protected-route";
 const App = () => {
   return (
     <>
@@ -181,30 +184,36 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/recover" element={<Recover />} />
           <Route path="/page/reset-password/:id" element={<ResetPassword />} />
+          <Route
+            path="/page/verify-account/:token"
+            element={<VerifyAccount />}
+          />
 
-          {/* Game Routes */}
-          <Route path="/home" element={<Homegame />} />
-          <Route path="/home/languagepick" element={<Languagepick />} />
-          <Route path="/languagepick/start" element={<Home />} />
-          <Route path="/languagepick/csslevel" element={<Csslevel />} />
-          <Route path="/languagepick/jslevel" element={<Jslevel />} />
-          <Route path="/leaderboard" element={<Leaderboards />} />
-          <Route path="/musicsetting" element={<Musicsetting />} />
-          <Route path="/lesson" element={<Lessonpage />} />
+          {/* Protected Routes */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="/home" element={<Homegame />} />
+            <Route path="/home/languagepick" element={<Languagepick />} />
+            <Route path="/languagepick/start" element={<Home />} />
+            <Route path="/languagepick/csslevel" element={<Csslevel />} />
+            <Route path="/languagepick/jslevel" element={<Jslevel />} />
+            <Route path="/leaderboard" element={<Leaderboards />} />
+            <Route path="/musicsetting" element={<Musicsetting />} />
+            <Route path="/lesson" element={<Lessonpage />} />
+            <Route path="/settings" element={<SettingsPage />} />
 
-          {/* Question Routes */}
-          <Route
-            path="/questions/html/:category/:level"
-            element={<HtmlQuestion />}
-          />
-          <Route
-            path="/questions/css/:category/:level"
-            element={<CssQuestion />}
-          />
-          <Route
-            path="/questions/js/:category/:level"
-            element={<JsQuestion />}
-          />
+            <Route
+              path="/questions/html/:category/:level"
+              element={<HtmlQuestion />}
+            />
+            <Route
+              path="/questions/css/:category/:level"
+              element={<CssQuestion />}
+            />
+            <Route
+              path="/questions/js/:category/:level"
+              element={<JsQuestion />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

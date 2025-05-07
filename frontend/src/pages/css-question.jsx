@@ -72,15 +72,11 @@ export const CssQuestion = () => {
     else setStars(1);
   }, [time]);
 
-  // Format time as MM:SS
-
-  // Handle input changes
   const handleAnswerChange = (event) => {
     const { name, value } = event.target;
     setAnswerInput((prevInput) => ({ ...prevInput, [name]: value }));
   };
 
-  // Handle answer submission
   const handleCorrectAnswer = () => {
     if (
       answerInput.answer1.trim() === questionData.answer1 &&

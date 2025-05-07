@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import LeaderBoardHook from "../hook/leader-board-hook";
 const Leaderboards = () => {
   const { leaderBoardData } = LeaderBoardHook();
-  console.log(leaderBoardData);
   return (
     <div
       className="w-full h-screen relative flex items-center justify-center flex-col font-mono "
@@ -50,7 +49,9 @@ const Leaderboards = () => {
               </div>
 
               {/* Name */}
-              <div className="text-white font-bold truncate">{entry.email}</div>
+              <div className="text-white font-bold truncate">
+                {entry.username}
+              </div>
 
               {/* Star and Points */}
               <div className="flex items-center justify-end gap-2">

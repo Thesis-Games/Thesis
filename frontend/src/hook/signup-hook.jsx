@@ -11,7 +11,7 @@ const SignUpHook = () => {
     setLoading(true);
     try {
       const data = await signupServices(credentials);
-      handleSuccessAlert("Successfully Registered!");
+      handleSuccessAlert(data.message);
 
       setTimeout(() => {
         navigate("/Signin");

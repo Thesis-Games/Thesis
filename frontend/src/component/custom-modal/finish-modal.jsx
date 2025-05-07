@@ -35,7 +35,6 @@ const FinishModal = ({
     );
     if (response) {
       setFinishModalOpen(false);
-
       navigate(
         category === "HTML"
           ? `/questions/html/HTML/${continueNavigate}`
@@ -46,14 +45,23 @@ const FinishModal = ({
     }
   };
 
-  const handleExist = () => {
-    navigate(
-      category === "HTML"
-        ? "/languagepick/start"
-        : category === "CSS"
-        ? "/languagepick/csslevel"
-        : "/languagepick/jslevel"
+  const handleExist = async () => {
+    const response = await handleCreateLeaderBoardAndLevelPoints(
+      category,
+      level,
+      points
     );
+
+    if (response) {
+      setFinishModalOpen(false);
+      navigate(
+        category === "HTML"
+          ? "/languagepick/start"
+          : category === "CSS"
+          ? "/languagepick/csslevel"
+          : "/languagepick/jslevel"
+      );
+    }
   };
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -82,7 +90,7 @@ const FinishModal = ({
         </div>
         <ModalTitle title={"Victory"} />
         {level == "25" ? (
-          <div className="absolute -bottom-5 left-1/3 transform -translate-x-1/2 ">
+          <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 ">
             <button
               className="bg-yellow-400 hover:bg-yellow-300 transition-colors text-black font-bold text-lg px-6 py-1 rounded-full border-4 border-black shadow-lg z-[60] w-[150px]"
               onClick={handleExist}

@@ -14,7 +14,6 @@ const ProfileHook = () => {
     };
     fetchProfile();
   }, []);
-  <div className=""></div>;
   return { profile };
 };
 

@@ -84,7 +84,7 @@ const Homegame = () => {
         </div>
 
         <div className="flex justify-center items-center mt-10">
-          <Link to="/musicsetting">
+          <Link to="/settings">
             <div
               className="flex items-center justify-center bg-[#1792f7] font-bold text-black text-xl hover:bg-[#44abff] hover:scale-110 transition-transform duration-300 rounded-full w-[200px] h-[70px] p-5 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]
                 max-xl:w-[200px] max-lg:w-[180px] max-md:w-[160px] max-sm:w-[140px]
