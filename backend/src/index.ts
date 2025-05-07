@@ -10,6 +10,7 @@ import questionHtmlRoute from "./routes/question-html-route";
 import levelRoute from "./routes/level-route";
 import questionCssRoute from "./routes/question-css-route";
 import questionJsRoute from "./routes/question-js-route";
+import cookieRoute from "./routes/cookie-route";
 const app: Application = express();
 const PORT = 3000;
 app.use(
@@ -27,8 +28,8 @@ app.use("/api/leaderboard", leaderBoardRoute);
 app.use("/api/html", questionHtmlRoute);
 app.use("/api/css", questionCssRoute);
 app.use("/api/js", questionJsRoute);
-
 app.use("/api/level", levelRoute);
+app.use("/api/cookie", cookieRoute);
 app.use(errorHandler);
 
 connectDB().then(() => {

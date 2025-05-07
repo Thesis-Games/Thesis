@@ -21,11 +21,12 @@ export const authenticationMiddleware = async (
     const decodedAccessToken = jwt.verify(
       accessToken,
       process.env.JWT_ACCESS_SECRET as string
-    ) as { id: string; email: string };
+    ) as { id: string; email: string; username: string };
 
     req.session = {
       account_id: decodedAccessToken.id,
       email: decodedAccessToken.email,
+      username: decodedAccessToken.username,
     };
 
     return next();
@@ -34,7 +35,7 @@ export const authenticationMiddleware = async (
       const decodedRefreshToken = jwt.verify(
         refreshToken,
         process.env.JWT_REFRESH_SECRET as string
-      ) as { id: string; email: string };
+      ) as { id: string; email: string; username: string };
 
       const currentSession = await sessionModel.findOne({
         account_id: decodedRefreshToken.id,
@@ -48,6 +49,7 @@ export const authenticationMiddleware = async (
       const newAccessToken = jwt.sign(
         {
           id: decodedRefreshToken.id,
+          username: decodedRefreshToken.username,
           email: decodedRefreshToken.email,
           iss: "refresh",
           aud: "thesisgame.app",
@@ -59,6 +61,8 @@ export const authenticationMiddleware = async (
       const newRefreshToken = jwt.sign(
         {
           id: decodedRefreshToken.id,
+          username: decodedRefreshToken.username,
+          email: decodedRefreshToken.email,
           iss: "refresh",
           aud: "thesisgame.app",
         },
@@ -92,6 +96,7 @@ export const authenticationMiddleware = async (
       req.session = {
         account_id: decodedRefreshToken.id,
         email: decodedRefreshToken.email,
+        username: decodedRefreshToken.username,
       };
 
       return next();

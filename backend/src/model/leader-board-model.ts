@@ -15,6 +15,11 @@ const leaderBoardSchema: Schema = new Schema(
       unique: true,
       trim: true,
     },
+    username: {
+      type: String,
+      required: true,
+      trim: true,
+    },
     points: {
       type: Number,
       required: true,

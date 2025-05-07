@@ -5,11 +5,19 @@ import { createAuthenticationAccount } from "../services/create-authentication";
 import { checkEmailExisting } from "../services/check-email-existing-";
 import { createSessionAndDeleteToken } from "../services/create-authentication";
 import jwt from "jsonwebtoken";
-import { generateResetToken } from "../services/generate-token";
+import { userModel } from "../model/user-model";
+import {
+  generateResetToken,
+  generateVerifyAccountCreateToken,
+} from "../services/generate-token";
 import RequestWithSession from "../types/request-with-session";
 import { forgotPasswordService } from "../services/reset-password-service";
-import { verifyResetPasswordToken } from "../services/verify-token";
+import {
+  verifyResetPasswordToken,
+  verifyAccountCreateToken,
+} from "../services/verify-token";
 import { updatePassword } from "../services/update-password";
+import { verifyAccountService } from "../services/create-account-token-service";
 import {
   generateAcessToken,
   generateRefreshToken,
@@ -21,21 +29,27 @@ export const signup = async (
 ): Promise<void> => {
   try {
     const { username, email, password } = req.body;
-    const hashedPassword = await hashText(password);
 
-    if (!hashedPassword) {
-      throw new CustomError("Failed to hash password", 500);
+    const existUsername = await userModel.findOne({ username });
+
+    if (existUsername) {
+      throw new CustomError("Username already exists", 400);
     }
 
-    const { user, Success_response } = await createAuthenticationAccount({
-      username,
+    const existEmail = await userModel.findOne({ email });
+
+    if (existEmail) {
+      throw new CustomError("Email already exists", 400);
+    }
+    const verifyAccountTOken = generateVerifyAccountCreateToken(
       email,
-      password: hashedPassword,
-    });
+      password,
+      username
+    );
+    const { message } = await verifyAccountService(verifyAccountTOken, email);
 
     res.status(200).json({
-      message: Success_response,
-      user: user,
+      message: message,
     });
   } catch (error) {
     next(error);
@@ -64,9 +78,17 @@ export const signin = async (
       throw new CustomError("Invalid Password", 400);
     }
 
-    const accessToken = generateAcessToken(account.id, email);
+    const accessToken = generateAcessToken(
+      account.id,
+      account.email,
+      account.username
+    );
 
-    const refreshToken = generateRefreshToken(account.id, email);
+    const refreshToken = generateRefreshToken(
+      account.id,
+      account.email,
+      account.username
+    );
 
     const { success_response } = await createSessionAndDeleteToken(
       account.id,
@@ -132,6 +154,7 @@ export const profile = async (
       message: "Profile fetched successfully",
       user: session?.account_id,
       email: session?.email,
+      username: session?.username,
     });
   } catch (error) {
     next(error);
@@ -183,8 +206,6 @@ export const resetPassword = async (
 
     const findEmail = await checkEmailExisting(email);
 
-    console.log(id, findEmail);
-
     if (!findEmail) {
       throw new CustomError("Account not Found", 400);
     }
@@ -207,4 +228,38 @@ export const logout = (req: Request, res: Response): void => {
   res.clearCookie("auth_accessToken");
   res.clearCookie("auth_refreshToken");
   res.status(200).json({ message: "Logged out successfully" });
+};
+
+export const verifyCreateAccount = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> => {
+  try {
+    const { token } = req.params;
+
+    if (!token) {
+      throw new CustomError("No token provided", 401);
+    }
+
+    const { username, email, password } = await verifyAccountCreateToken(token);
+    const hashedPassword = await hashText(password);
+
+    if (!hashedPassword) {
+      throw new CustomError("Failed to hash password", 500);
+    }
+    const { user, Success_response } = await createAuthenticationAccount({
+      username,
+      email,
+      password: hashedPassword,
+    });
+
+    res.status(200).json({
+      message: Success_response,
+      user: user,
+      success: true,
+    });
+  } catch (error) {
+    next(error);
+  }
 };

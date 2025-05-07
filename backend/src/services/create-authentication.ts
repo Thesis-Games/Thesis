@@ -2,16 +2,15 @@ import { accountModel } from "../model/account-model";
 import { userModel } from "../model/user-model";
 import { createauthenticationtype } from "../types/create-authentication-type";
 import { CustomError } from "../utils/custom-error";
-import { checkEmailExisting } from "./check-email-existing-";
 import { sessionModel } from "../model/session-model";
 export const createAuthenticationAccount = async ({
   username,
   password,
   email,
 }: createauthenticationtype) => {
-  const existingUser = await checkEmailExisting(email);
+  const existingUser = await accountModel.findOne({ email });
   if (existingUser) {
-    throw new CustomError("Account already exists", 400);
+    throw new CustomError("Account with this email already exists", 409);
   }
 
   const createUserAccount = await accountModel.create({
@@ -29,6 +28,7 @@ export const createAuthenticationAccount = async ({
     email,
     user_id: createUserAccount._id,
   });
+
   return {
     user: createUserAccount,
     Success_response: "Account created successfully",

@@ -20,7 +20,7 @@ export const createPoint = async (
     const decodedAccessToken = jwt.verify(
       accessToken,
       process.env.JWT_ACCESS_SECRET as string
-    ) as { id: string; email: string };
+    ) as { id: string; email: string; username: string };
 
     const checkUser = await leaderBoardModel.findOne({
       user_id: decodedAccessToken.id,
@@ -37,6 +37,7 @@ export const createPoint = async (
       const createAccountInLeaderBoard = await leaderBoardModel.create({
         user_id: decodedAccessToken.id,
         email: decodedAccessToken.email,
+        username: decodedAccessToken.username,
         points,
       });
 
