@@ -28,7 +28,7 @@ const Question12 = ({ data, handleAnswerChange, answerInput }) => {
               {"        border-radius: "}
               <input
                 type="text"
-                placeholder="20px"
+                placeholder=""
                 className="rounded-sm outline-none w-[40px] text-black px-1"
                 maxLength={4}
                 onChange={handleAnswerChange}

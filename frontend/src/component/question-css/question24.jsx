@@ -49,7 +49,7 @@ const Question24 = ({ data, handleAnswerChange, answerInput }) => {
                 className="rounded-sm outline-none w-[100px] text-black px-1 mt-1"
                 maxLength={15}
                 onChange={handleAnswerChange}
-                value={answerInput.answer1}
+                value={answerInput.answer3}
                 name="answer3"
               />
               {";"} <br />

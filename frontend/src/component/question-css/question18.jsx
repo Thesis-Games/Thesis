@@ -28,7 +28,7 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
               {"        transition: "}
               <input
                 type="text"
-                placeholder="transform"
+                placeholder=""
                 className="rounded-sm outline-none w-[100px] text-black px-1"
                 maxLength={9}
                 onChange={handleAnswerChange}
@@ -44,7 +44,7 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
               {"        transform: "}
               <input
                 type="text"
-                placeholder="scale(1.5)"
+                placeholder=""
                 className="rounded-sm outline-none w-[100px] text-black px-1"
                 maxLength={11}
                 onChange={handleAnswerChange}

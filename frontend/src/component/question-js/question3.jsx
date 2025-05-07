@@ -15,7 +15,7 @@ const Question3 = ({ data, handleAnswerChange, answerInput }) => {
               <input
                 type="text"
                 placeholder=""
-                className="rounded-sm outline-none w-[165px] text-black px-1"
+                className="rounded-sm outline-none w-[100px] text-black px-1"
                 onChange={handleAnswerChange}
                 value={answerInput.answer1}
                 name="answer1"
@@ -30,7 +30,7 @@ const Question3 = ({ data, handleAnswerChange, answerInput }) => {
               <input
                 type="text"
                 placeholder=""
-                className="rounded-sm outline-none w-[85px] text-black px-1"
+                className="rounded-sm outline-none w-[100px] text-black px-1"
                 onChange={handleAnswerChange}
                 value={answerInput.answer2}
                 name="answer2"

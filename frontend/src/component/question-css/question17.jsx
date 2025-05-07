@@ -40,7 +40,7 @@ const Question17 = ({ data, handleAnswerChange, answerInput }) => {
               {"        grid-column: span "}
               <input
                 type="text"
-                placeholder="2"
+                placeholder=""
                 className="rounded-sm outline-none w-[15px] text-black px-1"
                 maxLength={4}
                 onChange={handleAnswerChange}

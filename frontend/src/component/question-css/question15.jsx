@@ -24,7 +24,7 @@ const Question15 = ({ data, handleAnswerChange, answerInput }) => {
               {"        align-items: "}
               <input
                 type="text"
-                placeholder="flex-start"
+                placeholder=""
                 className="rounded-sm outline-none w-[70px] text-black px-1"
                 maxLength={11}
                 onChange={handleAnswerChange}

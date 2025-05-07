@@ -113,7 +113,7 @@ const Languagepick = () => {
 
         <Link to="/languagepick/jslevel">
           <div
-            className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff]"
+            className="w-[200px] h-[350px] rounded-xl flex justify-center items-center hover:scale-110 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#00e5ff] "
             style={{
               boxShadow: `
                   0 0 10px rgba(255, 255, 255, 0.8), 
@@ -165,7 +165,7 @@ const Languagepick = () => {
           }}
         >
           <div className=" bg-black rounded-lg p-2 ">
-            <div className="text-yellow-300 font-bold text-2xl font-mono tracking-normal">
+            <div className="text-yellow-300 font-bold text-2xl font-mono tracking-normal ">
               <h1>{profile?.username}</h1>
             </div>
           </div>

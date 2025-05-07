@@ -44,7 +44,7 @@ const Question11 = ({ data, handleAnswerChange, answerInput }) => {
               {"        background-color: "}
               <input
                 type="text"
-                placeholder="red"
+                placeholder=""
                 className="rounded-sm outline-none w-[30px] text-black px-1"
                 maxLength={3}
                 onChange={handleAnswerChange}
